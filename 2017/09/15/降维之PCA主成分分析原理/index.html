@@ -109,7 +109,7 @@
 <meta property="og:image" content="http://img.blog.csdn.net/20160207114645575">
 <meta property="og:image" content="https://pic2.zhimg.com/v2-2638cf1de5ae68f461b4eccacc46abbd_b.jpg">
 <meta property="og:image" content="https://pic3.zhimg.com/v2-87d225c3733b37a6f078c24ba29ad9fa_b.jpg">
-<meta property="og:updated_time" content="2017-09-17T06:16:52.900Z">
+<meta property="og:updated_time" content="2017-09-17T08:25:03.371Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="降维之PCA主成分分析原理">
 <meta name="twitter:description" content="背景在许多领域的研究与应用中，往往需要对反映事物的多个变量进行大量的观测，收集大量数据以便进行分析寻找规律。多变量大样本无疑会为研究和应用提供了丰富的信息，但也在一定程度上增加了数据采集的工作量，更重要的是在多数情况下，许多变量之间可能存在相关性，从而增加了问题分析的复杂性，同时对分析带来不便。如果分别对每个指标进行分析，分析往往是孤立的，而不是综合的。盲目减少指标会损失很多信息，容易产生错误的结">
@@ -347,11 +347,6 @@
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p><img src="http://wx1.sinaimg.cn/mw690/006SPLvCly1fjl7huer7lj30m80elwiz.jpg" alt=""><br>最大化样本点在基上的投影，使得数据点尽量的分离。<br>令第一主成分的方向是$u_1$，我们的目标就是将样本点在该方向上的投影最大化，即：</p>
 <script type="math/tex; mode=display">
 \max {\frac{1}{n} \sum_{i=1}^n < u_1,x_i >^2}</script><script type="math/tex; mode=display">
-\sum_{i=1}^m (h_{\theta}(x^i)-y^i)^2</script><p>$\sum_{i=0}^m$</p>
-<p>$(h_{\theta}(x^{(i)})-y^{(i)})^2$</p>
-<script type="math/tex; mode=display">
-J(\theta)=\frac{1}{2m} \sum_{i=1}^{m} (h_{\theta}-y^{(i)})</script><script type="math/tex; mode=display">
-J(\theta)=\frac{1}{2m}\sum_{i=1}^{m}\left(h_{\theta}(x^{(i)})-y^{(i)}\right)^2</script><script type="math/tex; mode=display">
  \frac{1}{n}\sum_{i=1}^n < u_1, x_i > \rightarrow \frac{1}{n}\sum_{i=1}^n(x_1^Tu_1)^2=\frac{1}{n}\sum_{i=1}^n(x_1^Tu_1)^T(x_1^Tu_1)</script><script type="math/tex; mode=display">
 =\frac{1}{n} \sum_{i=1}^n(u_1^T x_1 x_1^T u_1)= \frac{1}{n}u_1^T \left( \sum_{i=1}^n x_1 x_1^T \right) u_1 = \frac{1}{n} u_1^T \left(XX^T \right) u_1</script><p>其中的$X=[x_1,x_2,…,x_n]^T,x_i\in R^{m}$。那么优化函数就变成了：</p>
 <script type="math/tex; mode=display">
