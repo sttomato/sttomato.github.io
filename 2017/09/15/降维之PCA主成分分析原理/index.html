@@ -25,6 +25,8 @@
 
 
 
+  <meta name="google-site-verification" content="google9052d4d2b41d4fe2.html" />
+
 
 
 
@@ -99,8 +101,8 @@
 <meta name="keywords" content="PCA,Vincent">
 <meta property="og:type" content="article">
 <meta property="og:title" content="降维之PCA主成分分析原理">
-<meta property="og:url" content="http://yoursite.com/2017/09/15/降维之PCA主成分分析原理/index.html">
-<meta property="og:site_name" content="Tomato's Land">
+<meta property="og:url" content="http://yoursite.com/child/2017/09/15/降维之PCA主成分分析原理/index.html">
+<meta property="og:site_name" content="Tomato">
 <meta property="og:description" content="背景在许多领域的研究与应用中，往往需要对反映事物的多个变量进行大量的观测，收集大量数据以便进行分析寻找规律。多变量大样本无疑会为研究和应用提供了丰富的信息，但也在一定程度上增加了数据采集的工作量，更重要的是在多数情况下，许多变量之间可能存在相关性，从而增加了问题分析的复杂性，同时对分析带来不便。如果分别对每个指标进行分析，分析往往是孤立的，而不是综合的。盲目减少指标会损失很多信息，容易产生错误的结">
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/006SPLvCly1fjl6xw5qfyj30ur0bvdp7.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/006SPLvCly1fjl7huer7lj30m80elwiz.jpg">
@@ -141,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/15/降维之PCA主成分分析原理/"/>
+  <link rel="canonical" href="http://yoursite.com/child/2017/09/15/降维之PCA主成分分析原理/"/>
 
 
 
 
 
-  <title>降维之PCA主成分分析原理 | Tomato's Land</title>
+  <title>降维之PCA主成分分析原理 | Tomato</title>
   
 
 
@@ -175,7 +177,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Tomato's Land</span>
+        <span class="site-title">Tomato</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -252,16 +254,16 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/15/降维之PCA主成分分析原理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/child/2017/09/15/降维之PCA主成分分析原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="St. Tomato">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tomato's Land">
+      <meta itemprop="name" content="Tomato">
     </span>
 
     
@@ -343,18 +345,21 @@
 <h2 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h2><p>将一组N维向量降为K维（K大于0，小于N），其目标是选择K个单位（模为1）正交基，使得原始数据变换到这组基上后，各字段两两间协方差为0，而字段的方差则尽可能大（在正交的约束下，取最大的K个方差）</p>
 <p>注意：PCA的变换矩阵是协方差矩阵，K-L变换的变换矩阵可以有很多种（二阶矩阵、协方差矩阵、总类内离散度矩阵等等）。当K-L变换矩阵为协方差矩阵时，等同于PCA。</p>
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p><img src="http://wx1.sinaimg.cn/mw690/006SPLvCly1fjl7huer7lj30m80elwiz.jpg" alt=""><br>最大化样本点在基上的投影，使得数据点尽量的分离。<br>令第一主成分的方向是$u_1$，我们的目标就是将样本点在该方向上的投影最大化，即：</p>
-<p>$$<br>\max {\frac{1}{n} \sum_{i=1}^n &lt; u_1,x_i &gt;^2}<br>$$</p>
-<p>$$<br>\sum<em>{i=1}^m (h</em>{\theta}(x^i)-y^i)^2<br>$$</p>
-<p>$\sum_{i=0}^m$</p>
+<script type="math/tex; mode=display">
+\max {\frac{1}{n} \sum_{i=1}^n < u_1,x_i >^2}</script><script type="math/tex; mode=display">
+\sum_{i=1}^m (h_{\theta}(x^i)-y^i)^2</script><p>$\sum_{i=0}^m$</p>
 <p>$(h_{\theta}(x^{(i)})-y^{(i)})^2$</p>
-<p>$$<br>J(\theta)=\frac{1}{2m} \sum<em>{i=1}^{m} (h</em>{\theta}-y^{(i)})<br>$$</p>
-<p>$$<br>J(\theta)=\frac{1}{2m}\sum<em>{i=1}^{m}\left(h</em>{\theta}(x^{(i)})-y^{(i)}\right)^2<br>$$</p>
-<p>$$<br> \frac{1}{n}\sum_{i=1}^n &lt; u_1, x<em>i &gt; \rightarrow \frac{1}{n}\sum</em>{i=1}^n(x_1^Tu<em>1)^2=\frac{1}{n}\sum</em>{i=1}^n(x_1^Tu_1)^T(x_1^Tu_1)<br>$$</p>
-<p>$$<br>=\frac{1}{n} \sum_{i=1}^n(u_1^T x_1 x_1^T u_1)= \frac{1}{n}u<em>1^T \left( \sum</em>{i=1}^n x_1 x_1^T \right) u_1 = \frac{1}{n} u_1^T \left(XX^T \right) u_1<br>$$</p>
-<p>其中的$X=[x_1,x_2,…,x_n]^T,x_i\in R^{m}$。那么优化函数就变成了：<br>$$<br>\max u_1^T\left(XX^T\right)u_1<br>$$</p>
-<p>以上式子是个二次型，可以证明<code>$XX^T$</code>是半正定矩阵，所以上式必然有最大值。<br>$$<br>\max u_1^T\left(XX^T\right)u_1=\max ||X^Tu_1||_2^2<br>$$</p>
-<h2 id="优化函数"><a href="#优化函数" class="headerlink" title="优化函数"></a>优化函数</h2><p>$$<br>max||Wx||_2<br>$$</p>
-<p>$$<br>s.t.  W^TW=I<br>$$<br>解释：==最大化方差同时最小化协方差==（PCA本质上是将方差最大的方向作为主要特征，并且在各个正交方向上将数据“离相关”）。最大化方差意味着，使得每个样本点在每个维度上与均值有很大差异，就是说非常有个性，有个性才能分辨出来；同时协方差越小的话表明样本之间的互相影响就非常小，如果协方差是0的话，表示两个字段完全独立。<br><img src="http://img.blog.csdn.net/20160207114645575" alt="PCA解释"></p>
+<script type="math/tex; mode=display">
+J(\theta)=\frac{1}{2m} \sum_{i=1}^{m} (h_{\theta}-y^{(i)})</script><script type="math/tex; mode=display">
+J(\theta)=\frac{1}{2m}\sum_{i=1}^{m}\left(h_{\theta}(x^{(i)})-y^{(i)}\right)^2</script><script type="math/tex; mode=display">
+ \frac{1}{n}\sum_{i=1}^n < u_1, x_i > \rightarrow \frac{1}{n}\sum_{i=1}^n(x_1^Tu_1)^2=\frac{1}{n}\sum_{i=1}^n(x_1^Tu_1)^T(x_1^Tu_1)</script><script type="math/tex; mode=display">
+=\frac{1}{n} \sum_{i=1}^n(u_1^T x_1 x_1^T u_1)= \frac{1}{n}u_1^T \left( \sum_{i=1}^n x_1 x_1^T \right) u_1 = \frac{1}{n} u_1^T \left(XX^T \right) u_1</script><p>其中的$X=[x_1,x_2,…,x_n]^T,x_i\in R^{m}$。那么优化函数就变成了：</p>
+<script type="math/tex; mode=display">
+\max u_1^T\left(XX^T\right)u_1</script><p>以上式子是个二次型，可以证明<script type="math/tex">XX^T</script>是半正定矩阵，所以上式必然有最大值。</p>
+<script type="math/tex; mode=display">
+\max u_1^T\left(XX^T\right)u_1=\max ||X^Tu_1||_2^2</script><h2 id="优化函数"><a href="#优化函数" class="headerlink" title="优化函数"></a>优化函数</h2><script type="math/tex; mode=display">
+max||Wx||_2</script><script type="math/tex; mode=display">
+s.t.  W^TW=I</script><p>解释：==最大化方差同时最小化协方差==（PCA本质上是将方差最大的方向作为主要特征，并且在各个正交方向上将数据“离相关”）。最大化方差意味着，使得每个样本点在每个维度上与均值有很大差异，就是说非常有个性，有个性才能分辨出来；同时协方差越小的话表明样本之间的互相影响就非常小，如果协方差是0的话，表示两个字段完全独立。<br><img src="http://img.blog.csdn.net/20160207114645575" alt="PCA解释"></p>
 <p>寻找协方差矩阵的特征向量和特征值就等价于拟合一条能保留最大方差的直线或主成分。因为特征向量追踪到了主成分的方向，而最大方差和协方差的轴线表明了数据最容易改变的方向。根据上述推导，我们发现达到优化目标就等价于将协方差矩阵对角化：即除对角线外的其它元素化为0，并且在对角线上将特征值按大小从上到下排列。协方差矩阵作为实对称矩阵，其主要性质之一就是可以正交对角化，因此就一定可以分解为特征向量和特征值。</p>
 <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>总结一下PCA的算法步骤：</p>
 <p>设有$m$条$n$维(字段数)数据。</p>
@@ -366,7 +371,7 @@
 <li>将特征向量按对应特征值大小从上到下按行排列成矩阵，取前k行组成矩阵P</li>
 <li>$Y=PX$即为降维到k维后的数据</li>
 </ol>
-<h2 id="去均值化的目的"><a href="#去均值化的目的" class="headerlink" title="去均值化的目的"></a>去均值化的目的</h2><p>下面两幅图是数据做中心化（centering）前后的对比，可以看到其实就是一个平移的过程，平移后所有数据的中心是<code>$(0,0)$</code>.<br><img src="https://pic2.zhimg.com/v2-2638cf1de5ae68f461b4eccacc46abbd_b.jpg" alt=""></p>
+<h2 id="去均值化的目的"><a href="#去均值化的目的" class="headerlink" title="去均值化的目的"></a>去均值化的目的</h2><p>下面两幅图是数据做中心化（centering）前后的对比，可以看到其实就是一个平移的过程，平移后所有数据的中心是<script type="math/tex">(0,0)</script>.<br><img src="https://pic2.zhimg.com/v2-2638cf1de5ae68f461b4eccacc46abbd_b.jpg" alt=""></p>
 <p>在做PCA的时候，我们需要找出矩阵的特征向量，也就是主成分（PC）。比如说找到的第一个特征向量是a = [1, 2]，a在坐标平面上就是从原点出发到点（1，2）的一个向量。如果没有对数据做中心化，那算出来的第一主成分的方向可能就不是一个可以“描述”（或者说“概括”）数据的方向了。还是看图比较清楚。</p>
 <p><img src="https://pic3.zhimg.com/v2-87d225c3733b37a6f078c24ba29ad9fa_b.jpg" alt="主成分"><br>黑色线就是第一主成分的方向。只有中心化数据之后，计算得到的方向才能比较好的“概括”原来的数据。</p>
 <h2 id="限制"><a href="#限制" class="headerlink" title="限制"></a>限制</h2><p>PCA虽可以很好的解除线性相关，但是对于高阶相关性就没有办法了，对于存在高阶相关性的数据，可以考虑Kernel PCA，通过Kernel函数将非线性相关转为线性相关</p>
@@ -486,8 +491,12 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.jpg"
+              alt="St. Tomato" />
+          
             <p class="site-author-name" itemprop="name">St. Tomato</p>
-            <p class="site-description motion-element" itemprop="description"></p>
+            <p class="site-description motion-element" itemprop="description">No fuck can say</p>
         </div>
 
         <nav class="site-state motion-element">
@@ -497,7 +506,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -510,7 +519,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
