@@ -81,7 +81,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="快排," />
+  <meta name="keywords" content="机器学习,优化," />
 
 
 
@@ -97,17 +97,20 @@
 
 
 
-<meta name="description" content="博客上的代码1 博客上的代码2">
-<meta name="keywords" content="快排">
+<meta name="description" content="优化算法对目标函数求梯度 $\nabla_{\theta} J(\theta)$">
+<meta name="keywords" content="机器学习,优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="快速排序">
-<meta property="og:url" content="http://yoursite.com/child/2017/09/13/快排程序/index.html">
+<meta property="og:title" content="优化算法">
+<meta property="og:url" content="http://yoursite.com/child/2017/08/13/优化算法/index.html">
 <meta property="og:site_name" content="Tomato">
-<meta property="og:description" content="博客上的代码1 博客上的代码2">
-<meta property="og:updated_time" content="2017-09-22T15:54:05.863Z">
+<meta property="og:description" content="优化算法对目标函数求梯度 $\nabla_{\theta} J(\theta)$">
+<meta property="og:image" content="http://img.blog.csdn.net/20160329013917422?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="http://img.blog.csdn.net/20160329102417315?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:updated_time" content="2017-09-22T15:58:43.806Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="快速排序">
-<meta name="twitter:description" content="博客上的代码1 博客上的代码2">
+<meta name="twitter:title" content="优化算法">
+<meta name="twitter:description" content="优化算法对目标函数求梯度 $\nabla_{\theta} J(\theta)$">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20160329013917422?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 
 
 
@@ -137,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/child/2017/09/13/快排程序/"/>
+  <link rel="canonical" href="http://yoursite.com/child/2017/08/13/优化算法/"/>
 
 
 
 
 
-  <title>快速排序 | Tomato</title>
+  <title>优化算法 | Tomato</title>
   
 
 
@@ -248,7 +251,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/child/2017/09/13/快排程序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/child/2017/08/13/优化算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="St. Tomato">
@@ -265,7 +268,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">快速排序</h1>
+          <h1 class="post-title" itemprop="name headline">优化算法</h1>
         
 
         <div class="post-meta">
@@ -277,8 +280,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-13T22:46:21+08:00">
-                2017-09-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-13T23:32:00+08:00">
+                2017-08-13
               </time>
             
 
@@ -315,14 +318,77 @@
       
 
       
-        <ul>
-<li><a href="http://blog.csdn.net/morewindows/article/details/6684558" target="_blank" rel="external">博客上的代码1</a></li>
-<li><a href="http://www.cnblogs.com/foreverking/articles/2234225.html" target="_blank" rel="external">博客上的代码2</a></li>
-</ul>
+        <h1 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h1><p>对目标函数求梯度 $\nabla_{\theta} J(\theta)$</p>
 <a id="more"></a>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; <span class="built_in">array</span>, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> i = left;</div><div class="line">    <span class="keyword">int</span> j = right;</div><div class="line">    <span class="keyword">int</span> temp = <span class="built_in">array</span>[left];</div><div class="line">    </div><div class="line">    <span class="keyword">while</span> (i != j) &#123;</div><div class="line">        <span class="keyword">while</span> (i &lt;j &amp;&amp; temp &lt;= <span class="built_in">array</span>[j]) j --;</div><div class="line">        <span class="keyword">if</span> (i &lt; j) <span class="built_in">array</span>[i] = <span class="built_in">array</span>[j];</div><div class="line">        </div><div class="line">        <span class="keyword">while</span> (i &lt; j &amp;&amp; temp &gt; <span class="built_in">array</span>[i]) i ++;</div><div class="line">        <span class="keyword">if</span> (i &lt; j) <span class="built_in">array</span>[j] = <span class="built_in">array</span>[i];</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">array</span>[i] = temp;</div><div class="line">    </div><div class="line">    quickSort(<span class="built_in">array</span>, left, i - <span class="number">1</span>);</div><div class="line">    quickSort(<span class="built_in">array</span>, i + <span class="number">1</span>, right);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>分治思想</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; <span class="built_in">array</span>, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> i = left;</div><div class="line">    <span class="keyword">int</span> j = right;</div><div class="line">    <span class="keyword">int</span> temp = <span class="built_in">array</span>[left];</div><div class="line">    </div><div class="line">    <span class="keyword">while</span> (i != j) &#123;</div><div class="line">        <span class="keyword">while</span> (i &lt;j &amp;&amp; temp &lt;= <span class="built_in">array</span>[j]) j --;</div><div class="line">        <span class="keyword">if</span> (i &lt; j) <span class="built_in">array</span>[i] = <span class="built_in">array</span>[j];</div><div class="line">        </div><div class="line">        <span class="keyword">while</span> (i &lt; j &amp;&amp; temp &gt; <span class="built_in">array</span>[i]) i ++;</div><div class="line">        <span class="keyword">if</span> (i &lt; j) <span class="built_in">array</span>[j] = <span class="built_in">array</span>[i];</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">array</span>[i] = temp; </div><div class="line">    <span class="keyword">return</span> i;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; <span class="built_in">array</span>, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (left &lt; right) &#123;</div><div class="line">        <span class="keyword">int</span> dp = partition(<span class="built_in">array</span>, left, right);</div><div class="line">        quickSort(<span class="built_in">array</span>, left, dp - <span class="number">1</span>);</div><div class="line">        quickSort(<span class="built_in">array</span>, dp + <span class="number">1</span>, right);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="批量梯度下降"><a href="#批量梯度下降" class="headerlink" title="批量梯度下降"></a><strong>批量梯度下降</strong></h3><p>利用所有训练数据，计算目标函数梯度，$\eta$是学习率(learning rate)</p>
+<script type="math/tex; mode=display">\theta = \theta - \eta \cdot \nabla_{\theta} J(\theta)</script><p>缺点：一次参数更新需要计算整体数据的梯度，内存消耗大，不支持模型在线更新</p>
+<h3 id="随机梯度下降"><a href="#随机梯度下降" class="headerlink" title="随机梯度下降"></a><strong>随机梯度下降</strong></h3><p>训练中，利用一个样本$x^{(i)}$ 和标签 $y^{(i)}$进行一次参数更新</p>
+<script type="math/tex; mode=display">\theta = \theta - \eta \cdot \nabla J(\theta;x^{(i)};y^{(i)})</script><p>优点：</p>
+<blockquote>
+<ul>
+<li>速度快，支持在线学习</li>
+</ul>
+</blockquote>
+<p>缺点：</p>
+<blockquote>
+<ul>
+<li>高方差，目标函数值剧烈波动</li>
+<li>随机波动，容易陷入局部极小值</li>
+</ul>
+</blockquote>
+<h3 id="mini-batch-随机下降"><a href="#mini-batch-随机下降" class="headerlink" title="mini-batch 随机下降"></a><strong>mini-batch 随机下降</strong></h3><p>结合前两种，在训练中，利用一个 <em>batch</em> 样本$x^{(i)}$ 和标签 $y^{(i)}$进行一次参数更新</p>
+<script type="math/tex; mode=display">\theta = \theta - \eta \cdot \nabla J(\theta;x^{(i:i+n)};y^{(i:i+n)})</script><p>优点：</p>
+<blockquote>
+<ul>
+<li>减小参数更新的方程，收敛更平稳</li>
+<li>可以根据内存来控制输入</li>
+</ul>
+</blockquote>
+<h3 id="Momentum"><a href="#Momentum" class="headerlink" title="Momentum"></a><strong>Momentum</strong></h3><p>帮助SGD在相关方向上加速并抑制震荡，当前向量$v<em>t$的更新考虑了上一个时刻向量$v</em>{t-1}$的作用</p>
+<script type="math/tex; mode=display">\left\{
+\begin{aligned}
+v_t & = &\underbrace{\gamma v_{t-1}}_{momenturm \,term}  &+& \eta \cdot \nabla_{\theta} J(\theta)\\
+\theta & = &\theta &-& v_t \\
+\end{aligned}
+\right.</script><h3 id="Nesterov-accelerated-gradient-NAG"><a href="#Nesterov-accelerated-gradient-NAG" class="headerlink" title="Nesterov accelerated gradient(NAG)"></a><strong>Nesterov accelerated gradient(NAG)</strong></h3><p>给momentum term引入先验</p>
+<script type="math/tex; mode=display">\left\{
+\begin{aligned}
+v_t & = \gamma v_{t-1}  + \eta \cdot \nabla_{\theta} J(\theta - \gamma v_{t-1})\\
+\theta & = \theta   -  v_t \\
+\end{aligned}
+\right.</script><h3 id="AdaGrad"><a href="#AdaGrad" class="headerlink" title="AdaGrad"></a><strong>AdaGrad</strong></h3><p>之前的方法对所有参数$\theta$都用了相同的学习率$\eta$，AdaGrad在时刻$t$对每个参数$\theta_i$采用了不同的学习速率$\eta$<br>$\theta_i$在$t$时刻的梯度：</p>
+<script type="math/tex; mode=display">g_{t,i} = \nabla_\theta J(\theta_i)</script><p>SGD对在$t$时刻的参数$\theta_i$更新，</p>
+<script type="math/tex; mode=display">\theta_{t+1, i} = \theta_{t,i} - \eta \cdot g_{t,i}</script><p>AdaGrad在$t$时刻的参数$\theta_i$更新，</p>
+<script type="math/tex; mode=display">\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{G_{t,i} + \epsilon}} \cdot g_{t,i}</script><p>其中，$G_{t} \in \mathbb{R}^{d \times d}$是一个对角矩阵，对角元素$i$是每个参数$\theta_i$到t时刻为止，所有时刻梯度的平方之和，$\epsilon$为避免分母为0。<br>进一步，写成element-wise matrix-vector multiplication形式，</p>
+<script type="math/tex; mode=display">\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{G_{t} + \epsilon}} \odot g_{t}</script><p>优点</p>
+<blockquote>
+<ul>
+<li>不用人工调整学习率，默认0.01</li>
+</ul>
+</blockquote>
+<p>缺点</p>
+<blockquote>
+<ul>
+<li>在分母中累积梯度的平方，在训练过程中导致学习率一直在减小</li>
+<li>需要手动设置一个全局初始学习率</li>
+<li>更新$\theta_t$时，左右两边的单位不一致</li>
+</ul>
+</blockquote>
+<h3 id="Adadelta"><a href="#Adadelta" class="headerlink" title="Adadelta"></a><strong>Adadelta</strong></h3><p>为缓解AdaGrad学习率单调递减问题做出的扩展。不对过去所以时刻梯度平方累积，将累积时刻限制在窗口大小为$w$的区间<br>递归使得定义为过去所有时刻梯度平方的decaying average(?)。时刻$t$的running average $E[g^2]_t$仅仅依赖于之前average和当前的梯度<br>$\gamma$是一个衰减系数，随着时间指数衰减，因此与当前时刻比较近的$g_t$对梯度计算更起作用</p>
+<script type="math/tex; mode=display">E[g^2]_t = \gamma E[g^2]_{t-1} + (1-\gamma)g^2_t</script><p>将对角矩阵$G_t$替换为过去$t$时刻梯度平方的dacaying average $E[g^2]_t$</p>
+<script type="math/tex; mode=display">\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{E[g^2]_t + \epsilon}} \odot g_{t}</script><h3 id="RMSprop"><a href="#RMSprop" class="headerlink" title="RMSprop"></a><strong>RMSprop</strong></h3><p>和Adadelta原理相似？？？</p>
+<h3 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a><strong>Adam</strong></h3><p>Adaptvie Moment Estimation (Adam) 自适应学习速率计算方法。保存过去梯度平方和+momentum。</p>
+<script type="math/tex; mode=display">m_t=\beta_1 m_{t-1} + (1 - \beta_1) g_t\\
+v_t = \beta_2 v_{t - 1} + (1 - \beta_2) g_t^2</script><p>其中，$m_t$和$v_t$分别是梯度的一阶矩（均值）和二阶矩（偏方差）的估计<br>为消除估计值的偏差，计算bias-corrected</p>
+<script type="math/tex; mode=display">
+\widehat{m}_t = \frac{m_t}{1-\beta^t_1}\\
+\widehat{v}_t = \frac{v_t}{1 - \beta^t_2}</script><p>更新规则，</p>
+<script type="math/tex; mode=display">
+\theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\widehat{v}_t + \epsilon}} \widehat{m}_t</script><p>默认设置，$\beta_1 = 0.9,\beta_2=0.999,\epsilon=10^{-8}$</p>
+<hr>
+<p><img src="http://img.blog.csdn.net/20160329013917422?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="各优化算法对比-投影面"><br>【各优化算法对比-投影面】</p>
+<p><img src="http://img.blog.csdn.net/20160329102417315?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="各优化算法对比-马鞍面"></p>
+<hr>
 
       
     </div>
@@ -340,7 +406,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/快排/" rel="tag"># 快排</a>
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+            <a href="/tags/优化/" rel="tag"># 优化</a>
           
         </div>
       
@@ -353,8 +421,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/14/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/09/13/快排程序/" rel="next" title="快速排序">
+                <i class="fa fa-chevron-left"></i> 快速排序
               </a>
             
           </div>
@@ -363,8 +431,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/13/优化算法/" rel="prev" title="优化算法">
-                优化算法 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/07/机器学习修炼手册/" rel="prev" title="机器学习修炼手册">
+                机器学习修炼手册 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -417,8 +485,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -508,6 +585,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#优化算法"><span class="nav-number">1.</span> <span class="nav-text">优化算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#批量梯度下降"><span class="nav-number">1.0.1.</span> <span class="nav-text">批量梯度下降</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机梯度下降"><span class="nav-number">1.0.2.</span> <span class="nav-text">随机梯度下降</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mini-batch-随机下降"><span class="nav-number">1.0.3.</span> <span class="nav-text">mini-batch 随机下降</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Momentum"><span class="nav-number">1.0.4.</span> <span class="nav-text">Momentum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nesterov-accelerated-gradient-NAG"><span class="nav-number">1.0.5.</span> <span class="nav-text">Nesterov accelerated gradient(NAG)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AdaGrad"><span class="nav-number">1.0.6.</span> <span class="nav-text">AdaGrad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adadelta"><span class="nav-number">1.0.7.</span> <span class="nav-text">Adadelta</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RMSprop"><span class="nav-number">1.0.8.</span> <span class="nav-text">RMSprop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adam"><span class="nav-number">1.0.9.</span> <span class="nav-text">Adam</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
