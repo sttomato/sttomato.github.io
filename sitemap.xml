@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/child/2017/09/30/Sort-Algorithm/</loc>
+    
+    <lastmod>2017-09-30T08:37:35.474Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/child/2017/09/29/Data-Structure/</loc>
+    
+    <lastmod>2017-09-28T16:23:48.059Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/child/2017/09/21/LeetCode-Backtracking/</loc>
     
-    <lastmod>2017-09-27T08:01:43.911Z</lastmod>
+    <lastmod>2017-09-28T16:13:02.967Z</lastmod>
     
   </url>
   

@@ -4,8 +4,38 @@
 
     
   <url>
+    <loc>http://yoursite.com/child/2017/09/30/Sort-Algorithm/</loc>
+    <lastmod>2017-09-30T08:37:35.474Z</lastmod>
+    <data>
+        <display>
+        <title>Sort Algorithm</title>
+        <pubTime>2017-09-30T08:32:50.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/child/2017/09/29/Data-Structure/</loc>
+    <lastmod>2017-09-28T16:23:48.059Z</lastmod>
+    <data>
+        <display>
+        <title>Data Structure</title>
+        <pubTime>2017-09-28T16:17:39.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/child/2017/09/21/LeetCode-Backtracking/</loc>
-    <lastmod>2017-09-27T08:01:43.911Z</lastmod>
+    <lastmod>2017-09-28T16:13:02.967Z</lastmod>
     <data>
         <display>
         <title>LeetCode Backtracking</title>
