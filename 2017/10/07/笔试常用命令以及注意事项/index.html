@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="google9052d4d2b41d4fe2.html" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Vincent,笔试,cpp整理," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="又是一篇抄袭Vincent的博客，主要整理了笔试中常见容器的用法">
+<meta name="keywords" content="Vincent,笔试,cpp整理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔试常用命令以及注意事项">
+<meta property="og:url" content="http://yoursite.com/child/2017/10/07/笔试常用命令以及注意事项/index.html">
+<meta property="og:site_name" content="Tomato | 日狗少年的废宅日常">
+<meta property="og:description" content="又是一篇抄袭Vincent的博客，主要整理了笔试中常见容器的用法">
+<meta property="og:updated_time" content="2017-10-06T16:13:00.604Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="笔试常用命令以及注意事项">
+<meta name="twitter:description" content="又是一篇抄袭Vincent的博客，主要整理了笔试中常见容器的用法">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/child/2017/10/07/笔试常用命令以及注意事项/"/>
+
+
+
+
+
+  <title>笔试常用命令以及注意事项 | Tomato | 日狗少年的废宅日常</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container  page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tomato | 日狗少年的废宅日常</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/child/2017/10/07/笔试常用命令以及注意事项/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="St. Tomato">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tomato | 日狗少年的废宅日常">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">笔试常用命令以及注意事项</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-07T00:01:48+08:00">
+                2017-10-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>又是一篇抄袭Vincent的博客，主要整理了笔试中常见容器的用法</p>
+<a id="more"></a>
+<h2 id="vector-容器类的使用"><a href="#vector-容器类的使用" class="headerlink" title="vector 容器类的使用"></a>vector 容器类的使用</h2><h3 id="元素的访问"><a href="#元素的访问" class="headerlink" title="元素的访问"></a>元素的访问</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 迭代器的方式（可以防止越界）</span></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ::iterator iter = record.begin(); <span class="comment">// 定义迭代器</span></div><div class="line"><span class="keyword">for</span> (; iter != record.end(); iter++)</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; *iter &lt;&lt; <span class="string">" "</span>;</div><div class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line"></div><div class="line"><span class="comment">// 像数组一样的下标法访问，注意是否越界</span></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; record(&#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i &lt; record.size() ; i++)</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; record[i] &lt;&lt; <span class="string">" "</span>;</div><div class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line"></div><div class="line"><span class="comment">// 首尾元素</span></div><div class="line"><span class="keyword">int</span> first=record.front(); <span class="comment">// 首</span></div><div class="line"><span class="keyword">int</span> last=record.back();   <span class="comment">// 尾</span></div></pre></td></tr></table></figure>
+<h3 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h3><ul>
+<li>初始化vector元素</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 在record中放100个1</span></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; record(<span class="number">100</span>,<span class="number">1</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>输入单个元素</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; record;         <span class="comment">// 没有定义record的大小</span></div><div class="line"><span class="keyword">int</span> input;<span class="built_in">cin</span> &gt;&gt;input;</div><div class="line">record.push_back(input);    <span class="comment">// 在record末尾追加input元素</span></div><div class="line"></div><div class="line"><span class="comment">// 注意：此时不能利用下标法进行赋值，即record[0]=input是错误的！</span></div><div class="line"><span class="comment">// 如果就是想用下标法赋值的话，必须指定vector的长度，即：</span></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; record(<span class="number">1</span>);      <span class="comment">// 没有定义record的大小</span></div><div class="line"><span class="keyword">int</span> input;<span class="built_in">cin</span> &gt;&gt;input;</div><div class="line">record[<span class="number">0</span>]=input; <span class="comment">// 在record末尾追加input元素</span></div></pre></td></tr></table></figure>
+<ul>
+<li>将==输入的数字==传入一个已有的==vector==</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 输入a b c ,传入vector </span></div><div class="line"><span class="keyword">int</span> a,b,c;</div><div class="line"><span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b&gt;&gt;c; <span class="comment">// 输入a b c</span></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; record(&#123;a,b,c&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>将一个==vector==中的一个==区间==赋值给另外一个==vector==</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 将已知的input的位置区间[i,j)，即将从第i个位置到第j个位置之间的值传入到record </span></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; input(&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>&#125;);</div><div class="line"><span class="comment">// 将区间[3,7)传入另一vector</span></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; record(input.begin()+<span class="number">3</span><span class="number">-1</span>,input.begin()+<span class="number">7</span><span class="number">-1</span>);</div><div class="line"></div><div class="line"><span class="comment">// 也可以用其成员函数assign命令，将区间[i,j)内的数据赋值给另外一个vector</span></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; record；</div><div class="line">record.assign(input.begin(),input.end());</div><div class="line"></div><div class="line"><span class="comment">// 特殊地，将input全部元素赋值给record</span></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; record(input.begin() , input.end());</div><div class="line"></div><div class="line"><span class="comment">// 或者使用vector的成员函数swap来交换两个vector的值</span></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; record; </div><div class="line">record.swap(input); <span class="comment">// 将input赋值到record</span></div></pre></td></tr></table></figure>
+<ul>
+<li>将一个==数组==赋值给另外一个==vector==</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 将数组arr 传入record </span></div><div class="line"><span class="keyword">int</span> arr[] = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;;</div><div class="line"><span class="comment">// 在vector变量的参数中，第一个是起始地址，第二个为终止地址</span></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; record(arr, arr + <span class="keyword">sizeof</span>(arr)/<span class="keyword">sizeof</span>(arr[<span class="number">0</span>]));</div></pre></td></tr></table></figure>
+<h3 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h3><ul>
+<li>insert成员函数</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; record= &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;;</div><div class="line"><span class="comment">// 在第2位（从第0位开始）插入100，也就是在2后面</span></div><div class="line">record.insert(record.begin()+<span class="number">2</span>,<span class="number">100</span>); <span class="comment">//输出：1 2 100 3 4 5</span></div><div class="line"></div><div class="line"><span class="comment">// record.insert(record+pos,c.begin(),c.end())在pos位插入c的全部元素</span></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; record = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;;</div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a(&#123; <span class="number">5</span>, <span class="number">2</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">4</span> &#125;);</div><div class="line">record.insert(record.begin() + <span class="number">1</span>, a.begin(), a.end()); </div><div class="line"><span class="comment">// 输出1 5 2 7 8 1 0 4 2 3 4 5</span></div></pre></td></tr></table></figure>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><ul>
+<li>对vector进行排序：==std::sort==的使用</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 将input复制到input_copy，然后对input_copy中的元素做排序处理</span></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; input(&#123; <span class="number">2</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">9</span>, <span class="number">3</span>, <span class="number">10</span>, <span class="number">6</span> &#125;);</div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; input_copy(input.begin() , input.end()); </div><div class="line"><span class="comment">// 这里的排序是就地排序，会改变原来数组的位置关系</span></div><div class="line">sort(input_copy.begin(), input_copy.end());</div></pre></td></tr></table></figure>
+<h3 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h3><ul>
+<li>在vector中统计特定元素出现的次数：==std::count==的使用</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 统计record中出现7的次数</span></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; input(&#123; <span class="number">2</span>, <span class="number">7</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">9</span>, <span class="number">7</span>, <span class="number">10</span>, <span class="number">6</span> &#125;);</div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; record(input.begin() , input.end());</div><div class="line"><span class="comment">// count是stl的标准函数，其参数是count(begin,end,value)</span></div><div class="line"><span class="keyword">int</span> times = count(record.begin(), record.end(), <span class="number">7</span>);</div><div class="line"><span class="built_in">cout</span> &lt;&lt; times &lt;&lt; <span class="built_in">endl</span>; <span class="comment">// 最后会输出 2</span></div></pre></td></tr></table></figure>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><ul>
+<li>在vector中查找是否出现了某个元素：==std::find==的使用</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 判断record中是否出现8</span></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; input(&#123; <span class="number">2</span>, <span class="number">7</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">9</span>, <span class="number">7</span>, <span class="number">10</span>, <span class="number">6</span> &#125;);</div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; record(input.begin() , input.end()); <span class="comment">// 赋值给record</span></div><div class="line"><span class="comment">// 创建迭代器it，find是stl的标准函数，其参数是find(begin,end,value)</span></div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ::iterator it = find(record.begin(), record.end(), <span class="number">8</span>);</div><div class="line"><span class="keyword">if</span> (it != tmp.end()) <span class="built_in">cout</span> &lt;&lt; <span class="string">"found it !"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line"><span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; <span class="string">"404 not found !"</span> &lt;&lt; <span class="built_in">endl</span>;</div></pre></td></tr></table></figure>
+<h2 id="map容器类的使用"><a href="#map容器类的使用" class="headerlink" title="map容器类的使用"></a>map容器类的使用</h2><p>map就是所谓的映射，表示了从<code>key-&gt;value</code>的映射关系，map中的元素是按照二叉搜索树存储，进行中序遍历会得到有序遍历。</p>
+<blockquote>
+<p>注意：unordered_map和map类似，都是存储的key-value的值，可以通过key快速索引到value。不同的是unordered_map不会根据key的大小进行排序。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt;::iterator it;  <span class="comment">//unordered_map</span></div><div class="line"><span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; record;</div><div class="line">record.insert(make_pair(<span class="string">"c"</span>, <span class="number">6</span>));</div><div class="line">record.insert(make_pair(<span class="string">"b"</span>, <span class="number">66</span>));</div><div class="line">record.insert(make_pair(<span class="string">"a"</span>, <span class="number">666</span>));</div><div class="line"></div><div class="line"><span class="keyword">for</span> (it = record.begin(); it != record.end(); ++it)</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"key: "</span> &lt;&lt; it-&gt;first &lt;&lt; <span class="string">" value: "</span> &lt;&lt; it-&gt;second &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	</div><div class="line"><span class="comment">// 此时输出:</span></div><div class="line"><span class="comment">// key: a value: 666</span></div><div class="line"><span class="comment">// key: b value: 66</span></div><div class="line"><span class="comment">// key: c value: 6</span></div><div class="line"></div><div class="line"><span class="comment">//将初始化时的map换成unordered_map,</span></div><div class="line"><span class="comment">// key: c value: 6</span></div><div class="line"><span class="comment">// key: b value: 66</span></div><div class="line"><span class="comment">// key: a value: 666</span></div></pre></td></tr></table></figure>
+<h3 id="map的初始化"><a href="#map的初始化" class="headerlink" title="map的初始化"></a>map的初始化</h3><ul>
+<li>map<type1,type2>record; 其中type1/2表示类型，</type1,type2></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; record;</div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span> &gt; value = &#123; <span class="number">5</span>, <span class="number">2</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">4</span> &#125;;</div><div class="line">record.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;(<span class="number">1</span>, value));</div><div class="line">record.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;(<span class="number">2</span>, &#123;<span class="number">4</span>,<span class="number">5</span>&#125;));</div><div class="line">record.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;(<span class="number">3</span>, &#123;<span class="number">7</span>,<span class="number">3</span>,<span class="number">9</span>,<span class="number">2</span>&#125;));</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：上述初始化利用了pair来创建数据对， 在创建时需要指定类型。我们也可以用==make_pair==来简化这一步骤，make_pair():<br>无需写出型别， 就可以生成一个pair对象 。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; record;</div><div class="line">record.insert(make_pair(<span class="number">1</span>, &#123; <span class="number">5</span>, <span class="number">2</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">4</span> &#125;));</div><div class="line">record.insert(make_pair(<span class="number">2</span>, &#123;<span class="number">4</span>,<span class="number">5</span>&#125;));</div><div class="line">record.insert(make_pair(<span class="number">3</span>, &#123;<span class="number">7</span>,<span class="number">3</span>,<span class="number">9</span>,<span class="number">2</span>&#125;));</div></pre></td></tr></table></figure>
+<h3 id="map元素的访问"><a href="#map元素的访问" class="headerlink" title="map元素的访问"></a>map元素的访问</h3><ul>
+<li>访问普通数组的方式来访问map；不过此时的key值应为int型</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cout</span> &lt;&lt; record.size() &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">// 继续上述初始化的record</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; record.size(); i++)</div><div class="line">&#123;</div><div class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp = record[i];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; temp1.size(); j++)</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; temp[j] &lt;&lt; <span class="string">" "</span>;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>迭代器方式（任何）</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;::iterator it;</div><div class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; record;</div><div class="line"></div><div class="line">record.insert(pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;(<span class="number">1</span>, <span class="number">100</span>));</div><div class="line">record.insert(pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;(<span class="number">2</span>, <span class="number">200</span>));</div><div class="line">record.insert(pair&lt;<span class="keyword">int</span>, itn&gt;(<span class="number">3</span>, <span class="number">300</span>));</div><div class="line"></div><div class="line"><span class="keyword">for</span>(it=record.begin();it!=record.end();++it)</div><div class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"key: "</span>&lt;&lt;it-&gt;first &lt;&lt;<span class="string">" value: "</span>&lt;&lt;it-&gt;second&lt;&lt;<span class="built_in">endl</span>;</div></pre></td></tr></table></figure>
+<h3 id="查找：find"><a href="#查找：find" class="headerlink" title="查找：find()"></a>查找：find()</h3><p>对于容器们set，map以及相应的unordered_set或者unordered_map都有该成员函数。<br>例如对于一个unordered_map类型的变量record。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; record;</div><div class="line"><span class="keyword">if</span>(record.find(key)!=record.end())   <span class="comment">// 找到该建值</span></div><div class="line">&#123;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="栈的使用"><a href="#栈的使用" class="headerlink" title="栈的使用"></a>栈的使用</h3><p>stack<type_name> var;  // 声明一个type_name类型的var</type_name></p>
+<p>常用的命令包括</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var<span class="selector-class">.pop</span>();  <span class="comment">// 出栈</span></div><div class="line">var<span class="selector-class">.push</span>(); <span class="comment">// 入栈</span></div></pre></td></tr></table></figure>
+<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><p>n&amp;1和n%2是一个意思</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://www.runoob.com/w3cnote/cpp-vector-container-analysis.html" target="_blank" rel="external">vector容器类</a></p>
+<p><a href="http://www.runoob.com/try/runcode.php?filename=vincentqin&amp;type=cpp" target="_blank" rel="external">在线IDE</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vincent/" rel="tag"># Vincent</a>
+          
+            <a href="/tags/笔试/" rel="tag"># 笔试</a>
+          
+            <a href="/tags/cpp整理/" rel="tag"># cpp整理</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/06/ListNode/" rel="prev" title="ListNode">
+                ListNode <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.jpg"
+              alt="St. Tomato" />
+          
+            <p class="site-author-name" itemprop="name">St. Tomato</p>
+            <p class="site-description motion-element" itemprop="description">No fuck can say</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sttomato" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:shentao619@163.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>Email</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3145602122" target="_blank" title="Sina Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>Sina Weibo</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.vincentqin.tech/" title="friend site(where I have copyed a lot)" target="_blank">friend site(where I have copyed a lot)</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vector-容器类的使用"><span class="nav-number">1.</span> <span class="nav-text">vector 容器类的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#元素的访问"><span class="nav-number">1.1.</span> <span class="nav-text">元素的访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#赋值"><span class="nav-number">1.2.</span> <span class="nav-text">赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入"><span class="nav-number">1.3.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序"><span class="nav-number">1.4.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#统计"><span class="nav-number">1.5.</span> <span class="nav-text">统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找"><span class="nav-number">1.6.</span> <span class="nav-text">查找</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#map容器类的使用"><span class="nav-number">2.</span> <span class="nav-text">map容器类的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#map的初始化"><span class="nav-number">2.1.</span> <span class="nav-text">map的初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map元素的访问"><span class="nav-number">2.2.</span> <span class="nav-text">map元素的访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找：find"><span class="nav-number">2.3.</span> <span class="nav-text">查找：find()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#栈的使用"><span class="nav-number">2.4.</span> <span class="nav-text">栈的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#位运算"><span class="nav-number">3.</span> <span class="nav-text">位运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">3.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">St. Tomato</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
