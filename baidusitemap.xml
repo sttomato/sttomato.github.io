@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://yoursite.com/child/2017/10/07/Binary-Tree-Recursion/</loc>
+    <lastmod>2017-10-07T15:59:26.116Z</lastmod>
+    <data>
+        <display>
+        <title>Binary Tree & Recursion</title>
+        <pubTime>2017-10-07T02:37:16.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/child/2017/10/07/%E7%AC%94%E8%AF%95%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BB%A5%E5%8F%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</loc>
     <lastmod>2017-10-06T16:13:00.604Z</lastmod>
     <data>
@@ -181,9 +196,9 @@
         <title>降维之PCA主成分分析原理</title>
         <pubTime>2017-09-15T14:46:21.000Z</pubTime>
         
-        <tag>PCA</tag>
-         
         <tag>Vincent</tag>
+         
+        <tag>PCA</tag>
          
          
            

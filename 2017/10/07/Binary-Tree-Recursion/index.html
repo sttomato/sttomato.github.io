@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="google9052d4d2b41d4fe2.html" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="二叉树天然有着递归的结构，二叉树的定义即使用了递归123456struct TreeNode &amp;#123;    int val;    TreeNode *left;    TreeNode *right;    TreeNode(int x) val(x), left(NULL), right(NULL) &amp;#123;&amp;#125;&amp;#125;;">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Binary Tree & Recursion">
+<meta property="og:url" content="http://yoursite.com/child/2017/10/07/Binary-Tree-Recursion/index.html">
+<meta property="og:site_name" content="Tomato | 日狗少年的废宅日常">
+<meta property="og:description" content="二叉树天然有着递归的结构，二叉树的定义即使用了递归123456struct TreeNode &amp;#123;    int val;    TreeNode *left;    TreeNode *right;    TreeNode(int x) val(x), left(NULL), right(NULL) &amp;#123;&amp;#125;&amp;#125;;">
+<meta property="og:updated_time" content="2017-10-07T15:59:26.116Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Binary Tree & Recursion">
+<meta name="twitter:description" content="二叉树天然有着递归的结构，二叉树的定义即使用了递归123456struct TreeNode &amp;#123;    int val;    TreeNode *left;    TreeNode *right;    TreeNode(int x) val(x), left(NULL), right(NULL) &amp;#123;&amp;#125;&amp;#125;;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/child/2017/10/07/Binary-Tree-Recursion/"/>
+
+
+
+
+
+  <title>Binary Tree & Recursion | Tomato | 日狗少年的废宅日常</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container  page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tomato | 日狗少年的废宅日常</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/child/2017/10/07/Binary-Tree-Recursion/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="St. Tomato">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tomato | 日狗少年的废宅日常">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Binary Tree & Recursion</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-07T10:37:16+08:00">
+                2017-10-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>二叉树天然有着递归的结构，二叉树的定义即使用了递归<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> TreeNode &#123;</div><div class="line">    <span class="keyword">int</span> val;</div><div class="line">    TreeNode *left;</div><div class="line">    TreeNode *right;</div><div class="line">    TreeNode(<span class="keyword">int</span> x) val(x), left(<span class="literal">NULL</span>), right(<span class="literal">NULL</span>) &#123;&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p><strong>例题</strong>：二叉树的最大深度<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">return</span> max(maxDepth(root -&gt; left), maxDepth(root -&gt; right)) + <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>LeetCode练习题<br>No.111 Minimum Depth of Binary Tree</p>
+<p>Description:<br>Given a binary tree, find its minimum depth.</p>
+<p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
+<p>坑：路径的定义是根节点到叶子节点，叶子节点是没有左右孩子的节点<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span> (root -&gt; left == <span class="literal">NULL</span> &amp;&amp; root -&gt; right == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (root -&gt; left &amp;&amp; root -&gt; right == <span class="literal">NULL</span>) <span class="keyword">return</span> minDepth(root -&gt; left) + <span class="number">1</span>;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (root -&gt; left == <span class="literal">NULL</span> &amp;&amp; root -&gt; right) <span class="keyword">return</span> minDepth(root -&gt; right) + <span class="number">1</span>;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">return</span> min(minDepth(root -&gt; left), minDepth(root -&gt; right)) + <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p><strong>例题</strong>： 翻转二叉树<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function">TreeNode* <span class="title">invertTree</span><span class="params">(TreeNode* root)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (root) &#123;</div><div class="line">        TreeNode *left = invertTree(root -&gt; left);</div><div class="line">        root -&gt; left = invertTree(root -&gt; right);</div><div class="line">        root -&gt; right = left;            </div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> root;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>LeetCode练习题：</p>
+<ul>
+<li>No.100 SameTree</li>
+<li>No.101 Symmetric Tree</li>
+<li>No.222 Count Complete Tree Nodes</li>
+<li>No.110 Balanced Binary Tree</li>
+</ul>
+<p><strong>递归的终止条件</strong><br>例题: Path Sum</p>
+<p>坑：还在叶子节点</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">hasPathSum</span><span class="params">(TreeNode* root, <span class="keyword">int</span> sum)</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">//if (root == NULL) return (sum == 0);</span></div><div class="line">    <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    <span class="keyword">if</span> (root -&gt; left == <span class="literal">NULL</span> &amp;&amp; root -&gt; right == <span class="literal">NULL</span>) <span class="keyword">return</span> (sum == root -&gt; val);</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> hasPathSum(root -&gt; left, sum - root -&gt; val) || hasPathSum(root -&gt; right, sum - root -&gt; val);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>LeetCode练习题：</p>
+<ul>
+<li><a href="https://leetcode.com/problems/sum-of-left-leaves/description/" target="_blank" rel="external">No.404 Sum of Left Leaves</a></li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">sumOfLeftLeaves</span><span class="params">(TreeNode* root)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">if</span> (root -&gt; left != <span class="literal">NULL</span> &amp;&amp; root -&gt; left -&gt; left == <span class="literal">NULL</span> &amp;&amp; root -&gt; left -&gt; right == <span class="literal">NULL</span>) </div><div class="line">        <span class="keyword">return</span> root -&gt; left -&gt; val + sumOfLeftLeaves(root -&gt; right);</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">return</span> sumOfLeftLeaves(root -&gt; left) + sumOfLeftLeaves(root -&gt; right);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>递归的返回值</strong><br>例题：257. Binary Tree Paths</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; binaryTreePaths(TreeNode* root) &#123;        </div><div class="line">    <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span> &#123;&#125;;   </div><div class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; res;</div><div class="line">    <span class="built_in">string</span> tmp = to_string(root -&gt; val);</div><div class="line">    <span class="keyword">if</span> (root -&gt; left == <span class="literal">NULL</span> &amp;&amp; root -&gt; right == <span class="literal">NULL</span>) res.push_back(tmp);        </div><div class="line"></div><div class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; left = binaryTreePaths(root -&gt; left);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> iter = left.begin(); iter != left.end(); iter ++) res.push_back(tmp + <span class="string">"-&gt;"</span> + *(iter));</div><div class="line"></div><div class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; right = binaryTreePaths(root -&gt; right);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> iter = right.begin(); iter != right.end(); iter ++) res.push_back(tmp + <span class="string">"-&gt;"</span> + *(iter));</div><div class="line">        </div><div class="line">    <span class="keyword">return</span> res;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>LeetCode练习题：</p>
+<ul>
+<li><p>No.113 Path Sum II</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; pathSumHelper(TreeNode* root, <span class="keyword">int</span> sum) &#123;</div><div class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span> &#123;&#125;;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; res;</div><div class="line">        <span class="keyword">if</span> (root -&gt; left == <span class="literal">NULL</span> &amp;&amp; root -&gt; right == <span class="literal">NULL</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (sum == root -&gt; val) res.push_back(&#123;sum&#125;);</div><div class="line">            <span class="keyword">return</span> res;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">int</span> newSum = sum - root -&gt; val;</div><div class="line"></div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; left = pathSumHelper(root -&gt; left, newSum);</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;v: left) &#123;</div><div class="line">            <span class="keyword">if</span> (!v.empty()) &#123;</div><div class="line">                v.push_back(root -&gt; val);</div><div class="line">                res.push_back(v);</div><div class="line">            &#125;</div><div class="line">        &#125;            </div><div class="line">        </div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; right = pathSumHelper(root -&gt; right, newSum);</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;v: right) &#123;</div><div class="line">            <span class="keyword">if</span> (!v.empty()) &#123;</div><div class="line">                v.push_back(root -&gt; val);</div><div class="line">                res.push_back(v);                </div><div class="line">            &#125;</div><div class="line">        &#125;            </div><div class="line">        </div><div class="line">        <span class="keyword">return</span> res;   </div><div class="line">    &#125;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; pathSum(TreeNode* root, <span class="keyword">int</span> sum) &#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; res = pathSumHelper(root, sum);</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;v: res) &#123;</div><div class="line">            reverse(v.begin(), v.end());</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>No.129 Sum Root to Leaf Numbers</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">str2num</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.size(); i++) &#123;</div><div class="line">            res = res * <span class="number">10</span> + s[i] - <span class="string">'0'</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; sumNumbersHelper(TreeNode* root) &#123;</div><div class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span> &#123;&#125;;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; res;</div><div class="line">        <span class="built_in">string</span> s_val = to_string(root -&gt; val);</div><div class="line">        <span class="keyword">if</span> (root -&gt; left == <span class="literal">NULL</span> &amp;&amp; root -&gt; right == <span class="literal">NULL</span>)&#123;</div><div class="line">            res.push_back(s_val);</div><div class="line">        &#125; </div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; left = sumNumbersHelper(root -&gt; left);</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;s: left) &#123;</div><div class="line">            res.push_back(s_val + s);</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; right = sumNumbersHelper(root -&gt; right);</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;s: right) &#123;</div><div class="line">            res.push_back(s_val + s);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">sumNumbers</span><span class="params">(TreeNode* root)</span> </span>&#123;</div><div class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; str_num = sumNumbersHelper(root);</div><div class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> s : str_num) &#123;</div><div class="line">            <span class="keyword">int</span> tmp = str2num(s);</div><div class="line">            res += tmp;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"><span class="comment">//下面这个更值得学习</span></div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">helper</span><span class="params">(TreeNode* root, <span class="keyword">int</span> val)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (!root) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">auto</span> v = val*<span class="number">10</span> + root-&gt;val;</div><div class="line">        <span class="keyword">if</span> (!root-&gt;left &amp;&amp; !root-&gt;right) <span class="keyword">return</span> v;</div><div class="line">        <span class="keyword">return</span> helper(root-&gt;left, v) + helper(root-&gt;right, v);</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">sumNumbers</span><span class="params">(TreeNode* root)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> helper(root, <span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>复杂递归问题</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//一种错误的做法</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">pathSumIII</span><span class="params">(TreeNode* root, <span class="keyword">int</span> sum)</span> </span>&#123;</div><div class="line">   <span class="keyword">return</span> func(root, sum);</div><div class="line">&#125;</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(TreeNode* root,  <span class="keyword">int</span> sum)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>) &#123;</div><div class="line">            <span class="keyword">return</span> (sum == <span class="number">0</span>) ? <span class="number">1</span> : <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (sum == root -&gt; val) &#123;</div><div class="line">            count += <span class="number">1</span>;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        count += func(root -&gt; left, sum - root -&gt; val) + func(root -&gt; right, sum - root -&gt; val);</div><div class="line">        count += func(root -&gt; left, sum) + func(root -&gt; right, sum);   	<span class="comment">//在递归中会重复计算这一个过程</span></div><div class="line"></div><div class="line">        <span class="keyword">return</span> count;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line"><span class="comment">//正确的做法</span></div><div class="line"><span class="keyword">class</span> Solution &#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">pathSum</span><span class="params">(TreeNode* root, <span class="keyword">int</span> sum)</span> </span>&#123;       </div><div class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">            </div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">        count += func(root, sum);</div><div class="line">        count += pathSum(root -&gt; left, sum) + pathSum(root -&gt; right, sum);   	</div><div class="line"></div><div class="line">        <span class="keyword">return</span> count;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(TreeNode* root,  <span class="keyword">int</span> sum)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span> (sum == root -&gt; val) count += <span class="number">1</span>;</div><div class="line">        </div><div class="line">        count += func(root -&gt; left, sum - root -&gt; val) + func(root -&gt; right, sum - root -&gt; val);</div><div class="line"></div><div class="line">        <span class="keyword">return</span> count;</div><div class="line">    &#125;    </div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><strong>二分搜索树(Binary Search Tree)</strong></p>
+<ul>
+<li><p>基本操作：</p>
+<blockquote>
+<p>插入(insert)<br>查找(find)<br>删除(delete)</p>
+</blockquote>
+</li>
+<li><p>实现的功能：</p>
+<blockquote>
+<p>最大、最小<br>前驱、后继<br>上界、下界<br>某个元素的排序<br>寻找第K大(小)元素</p>
+</blockquote>
+</li>
+</ul>
+<p>用途：map，set<br>数据库底层实现：平衡二分搜索树</p>
+<p><strong>例题</strong>： No.235 Lowest Common Ancestor of a Binary Search Tree</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;</div><div class="line">    <span class="keyword">if</span> (p -&gt; val &lt; root -&gt; val &amp;&amp; q -&gt; val &lt; root -&gt; val) <span class="keyword">return</span> lowestCommonAncestor(root -&gt; left, p, q);</div><div class="line">    <span class="keyword">if</span> (p -&gt; val &gt; root -&gt; val &amp;&amp; q -&gt; val &gt; root -&gt; val) <span class="keyword">return</span> lowestCommonAncestor(root -&gt; right, p, q);</div><div class="line">    <span class="keyword">return</span> root;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>此题引申到普通二叉树，以下代码在LeetCode上通过(速度感人)<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;</div><div class="line">    <span class="keyword">if</span> (findTreeNode(root -&gt; left, p) &amp;&amp; findTreeNode(root -&gt; left, q)) <span class="keyword">return</span> lowestCommonAncestor(root -&gt; left, p, q);</div><div class="line">    <span class="keyword">if</span> (findTreeNode(root -&gt; right, p) &amp;&amp; findTreeNode(root -&gt; right, q)) <span class="keyword">return</span> lowestCommonAncestor(root -&gt; right, p, q);</div><div class="line">    <span class="keyword">return</span> root;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">findTreeNode</span><span class="params">(TreeNode* root, TreeNode* node)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    <span class="keyword">if</span> (root == node) <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    <span class="keyword">return</span> findTreeNode(root -&gt; left, node) || findTreeNode(root -&gt; right, node);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>LeetCode练习题：</p>
+<ul>
+<li>No.98 Validate Binary Search Tree</li>
+<li>No.450 Delete Node in a BST</li>
+<li>No.108 Convert Sorted Array to Binary Search Tree</li>
+<li>No.230 Kth Smallest Elemment in a BST</li>
+<li>No.236 Lowest Common Ancestor of a Binary Tree<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (root == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;</div><div class="line">    <span class="keyword">if</span> (root == p || root == q) <span class="keyword">return</span> root;</div><div class="line">    TreeNode* left = lowestCommonAncestor(root -&gt; left, p, q);</div><div class="line">    TreeNode* right = lowestCommonAncestor(root -&gt; right, p, q);</div><div class="line">    <span class="keyword">if</span> (left &amp;&amp; right) <span class="keyword">return</span> root;</div><div class="line">    <span class="keyword">return</span> left? left : right;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>总结</strong>：跟叶子节点相关的问题，需要判断其左右子节点</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/07/笔试常用命令以及注意事项/" rel="prev" title="笔试常用命令以及注意事项">
+                笔试常用命令以及注意事项 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.jpg"
+              alt="St. Tomato" />
+          
+            <p class="site-author-name" itemprop="name">St. Tomato</p>
+            <p class="site-description motion-element" itemprop="description">No fuck can say</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sttomato" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:shentao619@163.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>Email</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/3145602122" target="_blank" title="Sina Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>Sina Weibo</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.vincentqin.tech/" title="friend site(where I have copyed a lot)" target="_blank">friend site(where I have copyed a lot)</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">St. Tomato</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
