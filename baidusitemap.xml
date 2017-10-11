@@ -4,13 +4,19 @@
 
     
   <url>
-    <loc>http://yoursite.com/child/2017/10/09/%E9%80%92%E5%BD%92%E4%B8%8E%E5%9B%9E%E6%BA%AF/</loc>
-    <lastmod>2017-10-09T16:06:20.088Z</lastmod>
+    <loc>http://yoursite.com/child/2017/10/11/Dynamic-Programming/</loc>
+    <lastmod>2017-10-11T08:49:29.925Z</lastmod>
     <data>
         <display>
-        <title>Recursion & Backtracking</title>
-        <pubTime>2017-10-09T12:37:16.000Z</pubTime>
+        <title>Dynamic Programming</title>
+        <pubTime>2017-10-11T08:15:01.000Z</pubTime>
         
+        <tag>Data Structure</tag>
+         
+        <tag>Programming Practice</tag>
+         
+        <tag>Dynamic Programming</tag>
+         
          
            
         </display>
@@ -20,11 +26,34 @@
     
   <url>
     <loc>http://yoursite.com/child/2017/10/07/Binary-Tree-Recursion/</loc>
-    <lastmod>2017-10-07T15:59:26.116Z</lastmod>
+    <lastmod>2017-10-11T08:48:07.595Z</lastmod>
     <data>
         <display>
         <title>Binary Tree & Recursion</title>
         <pubTime>2017-10-07T02:37:16.000Z</pubTime>
+        
+        <tag>Recursion</tag>
+         
+        <tag>Binary Tree</tag>
+         
+        <tag>Data Structure</tag>
+         
+        <tag>Programming Practice</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/child/2017/10/09/%E9%80%92%E5%BD%92%E4%B8%8E%E5%9B%9E%E6%BA%AF/</loc>
+    <lastmod>2017-10-09T16:06:20.088Z</lastmod>
+    <data>
+        <display>
+        <title>Recursion & Backtracking</title>
+        <pubTime>2017-10-09T12:37:16.000Z</pubTime>
         
          
            

@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/child/2017/10/09/%E9%80%92%E5%BD%92%E4%B8%8E%E5%9B%9E%E6%BA%AF/</loc>
+    <loc>http://yoursite.com/child/2017/10/11/Dynamic-Programming/</loc>
     
-    <lastmod>2017-10-09T16:06:20.088Z</lastmod>
+    <lastmod>2017-10-11T08:49:29.925Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/child/2017/10/07/Binary-Tree-Recursion/</loc>
     
-    <lastmod>2017-10-07T15:59:26.116Z</lastmod>
+    <lastmod>2017-10-11T08:48:07.595Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/child/2017/10/09/%E9%80%92%E5%BD%92%E4%B8%8E%E5%9B%9E%E6%BA%AF/</loc>
+    
+    <lastmod>2017-10-09T16:06:20.088Z</lastmod>
     
   </url>
   
