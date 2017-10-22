@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/child/2017/09/14/hello-world/</loc>
+    <lastmod>2017-10-22T13:38:00.495Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2017-09-14T15:57:11.184Z</pubTime>
+        
+        <tag>Tutorials</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/child/2017/10/11/Dynamic-Programming/</loc>
     <lastmod>2017-10-11T08:49:29.925Z</lastmod>
     <data>
@@ -140,21 +157,6 @@
          
         <tag>面试</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/child/2017/09/14/hello-world/</loc>
-    <lastmod>2017-10-06T07:53:12.781Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2017-09-14T15:57:11.184Z</pubTime>
-        
          
            
         </display>
