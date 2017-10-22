@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>http://yoursite.com/child/2017/08/13/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2017-10-22T15:07:31.105Z</lastmod>
@@ -163,13 +164,13 @@
         <title>Binary Tree & Recursion</title>
         <pubTime>2017-10-07T02:37:16.000Z</pubTime>
         
-        <tag>Data Structure</tag>
-         
-        <tag>Programming Practice</tag>
-         
         <tag>Recursion</tag>
          
         <tag>Binary Tree</tag>
+         
+        <tag>Data Structure</tag>
+         
+        <tag>Programming Practice</tag>
          
          
            
@@ -231,11 +232,11 @@
         <title>Dynamic Programming</title>
         <pubTime>2017-10-11T08:15:01.000Z</pubTime>
         
-        <tag>Dynamic Programming</tag>
-         
         <tag>Data Structure</tag>
          
         <tag>Programming Practice</tag>
+         
+        <tag>Dynamic Programming</tag>
          
          
            
@@ -246,7 +247,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://yoursite.com/child/2017/10/06/ListNode/</loc>
