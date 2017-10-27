@@ -256,14 +256,70 @@
       
         
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-picture" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
       <h2 class="post-title">
         
             <a class="post-title-link" href="/2017/10/27/爬虫——从入门到肾亏/" itemprop="url">
               
-                <span itemprop="name">爬虫——从入门到肾亏</span>
+                <p>最近，懒癌晚期生不如死贪生怕死的摸鱼狂魔不想改论文又害怕被老板骂的纠结心情下，想找点事情放松一下，就开车尝试开车做了一点爬虫。<br><a id="more"></a></p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>效果基本还阔以，有会爬的网站，也有不会的，罗列一下。</p>
+<blockquote>
+<p>爬到东西的网站：</p>
+<ol>
+<li>小猪短租 (爬了一些房源信息，比如价格，地理位置之类的)</li>
+<li>煎蛋网 (三俗图片)</li>
+<li>B站相册 (cos + 画册)</li>
+<li>福利社 (内容和站名一样耿直，不解释了)</li>
+</ol>
+<p>没爬到东西的网站：</p>
+<ol>
+<li>网易LOFTER (目前只会爬一个页面，页面跳转需要点击网页元素，不支持粗暴的url爬取)</li>
+<li>花瓣网 (可能是需要登录或者加headers设置，没搞定，没爬到东西)</li>
+</ol>
+</blockquote>
+<p>   除了小猪短租是文本其他的都主要是以图片为主，其实小猪上的文本还是很有价值的，比如分析地理位置和价格的关系，统计一下房东有多少套房之类的，这些都没有做，统统没有做，最简单的都没有，这次只为<strong>开车</strong>！<br><img src="http://rar8.net/Soft/UploadSoftPic/201605/2016051109410840.jpg" width="200"><br><!-- ![kaiche](http://rar8.net/Soft/UploadSoftPic/201605/2016051109410840.jpg) --></p>
+<p>下面简单说一下，我为躲避科研都干了啥。</p>
+<h2 id="煎蛋网"><a href="#煎蛋网" class="headerlink" title="煎蛋网"></a>煎蛋网</h2><ol>
+<li><p>域名(url)：<a href="https://jandan.net/" target="_blank" rel="external">https://jandan.net/</a></p>
+</li>
+<li><p>选择，“妹子图”，点进去后的地址是长这样的 “<a href="https://jandan.net/ooxx" target="_blank" rel="external">https://jandan.net/ooxx</a>“ (你看看这链接←_←)，整个“妹子图”版块是像贴吧一样盖楼盖起来的，然后当前页面是该主题下的最后一页。</p>
+</li>
+<li><p>我们找到第一页。在没搞爬虫之前我想到只有一页页往回翻，但这太慢了，等真翻到第一页，早就软了。其实，我们发现翻了一页之后链接地址就大概是这样了 “<a href="https://jandan.net/ooxx/page-234#comments" target="_blank" rel="external">https://jandan.net/ooxx/page-234#comments</a>“ ，看到<code>page</code>后面的数字了么，所以只要改数字就可以翻页了么？是的，这个网站就这么搞。链接 “<a href="https://jandan.net/ooxx/page-1#comments" target="_blank" rel="external">https://jandan.net/ooxx/page-1#comments</a>“ 就是“妹子图”版块的第一页(网易LOFTER让我爬不动的原因就是此路不通，毕竟我还是一个宝宝┑(￣Д ￣)┍)。所以理论上，现在我们可以爬取从当前页到第一页的所有页面了。</p>
+</li>
+<li><p>还有一个坑是，图片右键“检查”之后，定位到的图片链接不是原图，导致两个问题。第一，爬到的jpg图片比原图略小，从省流量的角度看，这个尚可以忍受；第二，gif图片不仅变小了很多，而且还特么不动了！这还撸个毛(／‵口′)／~╧╧，正当我紧张到汗流浃背不知所措的时候，我发现原图的链接就在定位链接的上面(°Д°)。</p>
+</li>
+</ol>
+<p><img src="https://wx4.sinaimg.cn/mw690/bb7e144aly1fkwtlicqerj21410lm7jk.jpg" alt="image"></p>
+<p>   这样基本就可以写代码了，用python的BeautifulSoup库就可以搞定了。目前总共有235个页面，我心慈手软就只爬了100个页面，主要原因还是<del>营养快线</del>学校流量太贵了。</p>
+<p>成果展示一下:<br><img src="https://wx1.sinaimg.cn/mw690/bb7e144aly1fkwttlvataj21c10pwhdt.jpg"><br><img src="https://wx3.sinaimg.cn/mw690/bb7e144aly1fkwu5vacowj20dc0hs0t7.jpg" width="400"><br><img src="https://wx3.sinaimg.cn/mw690/bb7e144aly1fkwu7w9miaj20k80e9gm4.jpg" width="400"><br><img src="https://wx3.sinaimg.cn/mw690/bb7e144aly1fkwu9xpzqtg208x050qmr.gif" width="400"></p>
+<p>好了，不能更多了，溜了溜了~</p>
+<h2 id="B站相册"><a href="#B站相册" class="headerlink" title="B站相册"></a>B站相册</h2><ol>
+<li><p>域名(url)：<a href="https://h.bilibili.com/" target="_blank" rel="external">https://h.bilibili.com/</a></p>
+</li>
+<li><p>进入cosplay页面，地址”<a href="https://h.bilibili.com/eden/picture_area#/?class=cos&amp;tag=&amp;dateSort=%E6%8E%A8%E8%8D%90" target="_blank" rel="external">https://h.bilibili.com/eden/picture_area#/?class=cos&amp;tag=&amp;dateSort=%E6%8E%A8%E8%8D%90</a>“ ，从链接来看，唔……瞬间懵逼，然后尝试右键”检查”(啊，喂！不要对着妹子的内衣点检查啊，混蛋！)，然后点击上方的<code>Network</code>标签，勾选<code>Hide data URLs</code>，点击<code>XHR</code>，然后刷新网站，从罗列出来的信息中，找到一个名字很长的，叫……太长了不列出来了，见下图。然后食指快速拨弄鼠标右键两次直到页面颤抖着弹出一个新的窗口，进入下一步。</p>
+</li>
+</ol>
+<p><img src="https://wx1.sinaimg.cn/mw690/bb7e144aly1fkwuvtvblsj20rd0hxn2c.jpg" alt="image"></p>
+<ol>
+<li><p>新弹出来<a href="https://api.vc.bilibili.com/link_draw/v1/doc/list?category=cos&amp;type=2&amp;page_size=20&amp;page_num=0&amp;tag=&amp;source=normal" target="_blank" rel="external">页面</a>里都是文本信息，但是却包含了想要爬取的全部内容(不包括coser的三围)，其文本组建形式用的是JSON，我没怎么用过这个库，顺手就把她解析成了python的字典类型，然后再一层层探进去，想要啥就摸啥了，没啥抵抗能力的⁄(⁄⁄•⁄ω⁄•⁄⁄)⁄。我主要取了coser的昵称、主题当然还有图片这三个信息用于保存。</p>
+<p>碰到的坑，我一开始的想法是把coser的主题作为文件夹，然后在文件夹下面用coser昵称命名，以tomato为例，就是tomato_1.<del>avi</del>jpg，tomtao_2.jpg……以此类推。碰到两个问题，一个是coser命名的主题和昵称有可能不符合文件或文件夹命名规范，删除或者替换违法字符；二，用coser的昵称作为文件夹，然后用主题命名图片更好，因为有些coser还真是相当高产呢(当然也可以在昵称文件夹下再建立一个主题文件夹)</p>
+</li>
+</ol>
+<p>效果展示如下：</p>
+<p><img src="https://wx1.sinaimg.cn/mw690/bb7e144aly1fkwvulzftcj21c10pwno7.jpg" alt="1"><br><img src="http://wx3.sinaimg.cn/mw690/bb7e144aly1fkx7areb6bj21kw2cowtt.jpg" alt="2"><br><img src="http://wx2.sinaimg.cn/mw690/bb7e144aly1fkx7dwk4ufj21kw11vdoe.jpg" alt="3"></p>
+<p>另外，还爬取了绘画的相册，方法一毛一样，这次把文件目录整理得更好一点惹。</p>
+<p><img src="https://wx2.sinaimg.cn/mw690/bb7e144aly1fkwvty8qqcj21c10pw7us.jpg" alt="1"><br><img src="http://wx4.sinaimg.cn/mw690/bb7e144aly1fkx7fp5yejj21hc0v7wsw.jpg" alt="2"><br><img src="http://wx4.sinaimg.cn/mw690/bb7e144aly1fkx7he7cvyj21kw0wvq9b.jpg" alt="3"></p>
+<h2 id="福利社"><a href="#福利社" class="headerlink" title="福利社"></a>福利社</h2><p>写到这里，我的羞耻感快要爆棚了。</p>
+<ol>
+<li>域名(url): “<a href="http://www.182fl.com/?cate=6&amp;page=1" target="_blank" rel="external">http://www.182fl.com/?cate=6&amp;page=1</a>“</li>
+<li>这是随手找到的一个野生写真女郎福利站(那个说我从收藏夹里翻出来的同学，今晚你没有营养快线喝了)，对于爬虫萌新来说简直不能更友好。老办法，对着图片右键<code>检查</code>，定位的地方不是想要的图片地址这个套路大家已经都懂了，只要爬取上一层结构中的地址就可以，基于此地址就是模特图集地址了~<br><img src="https://wx1.sinaimg.cn/mw690/bb7e144aly1fkwwdpo8pdj20fy0etmym.jpg" alt="image"></li>
+<li>由于每个模特的图集页数不是一个固定的数字，也就是说我不知道总共有多少页，如果用爬“煎蛋网”的方法来处理就会出错。当我正在思考如何爬取该图集下全部图片的时候，我发现了下图这个。点击“显示全文”，地址变成了”<a href="http://www.182fl.com/?id=4725&amp;page=all" target="_blank" rel="external">http://www.182fl.com/?id=4725&amp;page=all</a>“ ，也就是说只要在第2步中加上’&amp;page=all’就可以获得这个整个图集下面的图片链接了。<br><img src="https://wx1.sinaimg.cn/mw690/bb7e144aly1fkwwo4fbuyj20jb01vmx0.jpg" alt="image"></li>
+</ol>
+<p>这个基本没有啥坑，效果如下(因为还在图书馆，细节先不放了。对，我还要脸(￣▽￣)：<br><img src="https://wx4.sinaimg.cn/mw690/bb7e144aly1fkwx1gkrcbj21bi0hk12p.jpg" alt="image"></p>
+<h2 id="代码地址"><a href="#代码地址" class="headerlink" title="代码地址"></a>代码地址</h2><p>还在考虑要不要放代码。主要原因，没别的，还是……要脸 (ﾉ) ｪ(ヾ)<br>实在想看的话，可以去我的gay吧……</p>
+
               
             </a>
         
