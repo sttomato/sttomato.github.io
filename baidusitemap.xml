@@ -3,6 +3,8 @@
 
 
     
+    
+    
   <url>
     <loc>http://yoursite.com/child/2017/10/27/%E7%88%AC%E8%99%AB%E2%80%94%E2%80%94%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%82%BE%E4%BA%8F/</loc>
     <lastmod>2017-10-27T16:49:40.856Z</lastmod>
@@ -56,9 +58,9 @@
         <title>降维之PCA主成分分析原理</title>
         <pubTime>2017-09-15T14:46:21.000Z</pubTime>
         
-        <tag>PCA</tag>
-         
         <tag>Vincent</tag>
+         
+        <tag>PCA</tag>
          
          
            
@@ -331,5 +333,4 @@
     </data>
     </url>
 
-    
 </urlset>
