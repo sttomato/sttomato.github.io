@@ -45,9 +45,9 @@
 
     
     <entry>
-      <title><![CDATA[Hexo中没有搞定的几个功能]]></title>
+      <title><![CDATA[Hexo优化实验]]></title>
       <url>%2F2017%2F10%2F06%2FHexo%E4%B8%AD%E6%B2%A1%E6%9C%89%E6%90%9E%E5%AE%9A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%8A%9F%E8%83%BD%2F</url>
-      <content type="text"><![CDATA[以下是希望有的功能，但是目前还不知道如何实现 [x] 去掉图片周围的边框进入目录themes\next\source\css\_common\components\post，打开文件post-expand.styl，搜索找到img，修改变量border后面的颜色编码，原是#ddd，改完之后是#FFF [ ] 图片不用总是居中显示 [ ] 代码折叠 [ ] 多选择流程图绘画 [ ] 复选框功能]]></content>
+      <content type="text"><![CDATA[用于记录不知道怎么优化的问题，和记录被改过的部分。 以下是希望有的功能，但是目前还不知道如何实现 [x] 去掉图片周围的边框进入目录themes\next\source\css\_common\components\post，打开文件post-expand.styl，搜索找到img，修改变量border后面的颜色编码，原是#ddd，改完之后是#FFF [ ] 图片不用总是居中显示 [ ] 代码折叠 [ ] 多选择流程图绘画 [ ] 复选框功能 修改了折叠样式在themes\next\source\css\_common\components\pages\schedule.styl中增加了一部分代码，使得在about页面可以隐藏一份简历，代码如下： 12345678910111213/*自定义图标，可用图片或字符,如果使用图片，请把content的值设置成空字符*//*展开*/.menu summary:before &#123; content: "--"; /*background: url(../Images/right.png) no-repeat center center;*/ /*收起时的图片*/ /*vertical-align: middle;*/&#125;/*收起*/.menu[open] summary:before &#123; content: "--"; /*background: url(../Images/down.png) no-repeat center center;*/ /*展开时的图片*/&#125;]]></content>
     </entry>
 
     
@@ -89,7 +89,7 @@
     <entry>
       <title><![CDATA[Hello World]]></title>
       <url>%2F2017%2F09%2F14%2Fhello-world%2F</url>
-      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: DeploymentMore Tips:数学符号Latex math symbol 主题个性化hexo流程图hexo-filter-flowchart st=>start: Start|past:>http://www.google.com[blank] e=>end: End:>http://www.google.com op1=>operation: My Operation|past op2=>operation: Stuff|current sub1=>subroutine: My Subroutine|invalid cond=>condition: Yes or No?|approved:>http://www.google.com c2=>condition: Good idea|rejected io=>inputoutput: catch something...|request st->op1(right)->cond cond(yes, right)->c2 cond(no)->sub1(left)->op1 c2(yes)->io->e c2(no)->op2->e{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12} var code = document.getElementById("flowchart-0-code").value; var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value)); var diagram = flowchart.parse(code); diagram.drawSVG("flowchart-0", options);]]></content>
+      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: DeploymentMore Tips:数学符号Latex math symbol 主题个性化hexo流程图hexo-filter-flowchart Hexo之NexT主题搭建博客详细过程 Hexo docst=>start: Start|past:>http://www.google.com[blank] e=>end: End:>http://www.google.com op1=>operation: My Operation|past op2=>operation: Stuff|current sub1=>subroutine: My Subroutine|invalid cond=>condition: Yes or No?|approved:>http://www.google.com c2=>condition: Good idea|rejected io=>inputoutput: catch something...|request st->op1(right)->cond cond(yes, right)->c2 cond(no)->sub1(left)->op1 c2(yes)->io->e c2(no)->op2->e{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12} var code = document.getElementById("flowchart-0-code").value; var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value)); var diagram = flowchart.parse(code); diagram.drawSVG("flowchart-0", options);]]></content>
     </entry>
 
     

@@ -1818,7 +1818,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #5de2ac;
+  background: #ffffd9;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2501,6 +2501,20 @@ pre .javascript .function {
 }
 #schedule ul#event-list li.event-now * {
   color: #fff !important;
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+.menu summary:before {
+  content: "--";
+/*background: url(../Images/right.png) no-repeat center center;*/
+/*����ʱ��ͼƬ*/
+/*vertical-align: middle;*/
+}
+.menu[open] summary:before {
+  content: "--";
+/*background: url(../Images/down.png) no-repeat center center;*/
+/*չ��ʱ��ͼƬ*/
 }
 @-moz-keyframes dot-flash {
   from {

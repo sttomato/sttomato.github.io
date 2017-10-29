@@ -97,17 +97,17 @@
 
 
 
-<meta name="description" content="以下是希望有的功能，但是目前还不知道如何实现">
+<meta name="description" content="用于记录不知道怎么优化的问题，和记录被改过的部分。">
 <meta name="keywords" content="坑">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo中没有搞定的几个功能">
+<meta property="og:title" content="Hexo优化实验">
 <meta property="og:url" content="http://yoursite.com/child/2017/10/06/Hexo中没有搞定的几个功能/index.html">
 <meta property="og:site_name" content="Tomato | 日狗少年的吃瓜日常">
-<meta property="og:description" content="以下是希望有的功能，但是目前还不知道如何实现">
-<meta property="og:updated_time" content="2017-10-29T05:43:15.252Z">
+<meta property="og:description" content="用于记录不知道怎么优化的问题，和记录被改过的部分。">
+<meta property="og:updated_time" content="2017-10-29T09:24:57.416Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo中没有搞定的几个功能">
-<meta name="twitter:description" content="以下是希望有的功能，但是目前还不知道如何实现">
+<meta name="twitter:title" content="Hexo优化实验">
+<meta name="twitter:description" content="用于记录不知道怎么优化的问题，和记录被改过的部分。">
 
 
 
@@ -143,7 +143,7 @@
 
 
 
-  <title>Hexo中没有搞定的几个功能 | Tomato | 日狗少年的吃瓜日常</title>
+  <title>Hexo优化实验 | Tomato | 日狗少年的吃瓜日常</title>
   
 
 
@@ -206,22 +206,22 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -295,7 +295,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo中没有搞定的几个功能</h1>
+          <h1 class="post-title" itemprop="name headline">Hexo优化实验</h1>
         
 
         <div class="post-meta">
@@ -325,7 +325,7 @@
 
           
           
-             <span id="/2017/10/06/Hexo中没有搞定的几个功能/" class="leancloud_visitors" data-flag-title="Hexo中没有搞定的几个功能">
+             <span id="/2017/10/06/Hexo中没有搞定的几个功能/" class="leancloud_visitors" data-flag-title="Hexo优化实验">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -356,8 +356,8 @@
       
 
       
-        <p>以下是希望有的功能，但是目前还不知道如何实现</p>
-<a id="more"></a>
+        <p>用于记录不知道怎么优化的问题，和记录被改过的部分。<br><a id="more"></a></p>
+<p>以下是希望有的功能，但是目前还不知道如何实现</p>
 <ul>
 <li>[x] 去掉图片周围的边框<br>进入目录<code>themes\next\source\css\_common\components\post</code>，打开文件<code>post-expand.styl</code>，搜索找到<code>img</code>，修改变量<code>border</code>后面的颜色编码，原是<code>#ddd</code>，改完之后是<code>#FFF</code></li>
 <li>[ ] 图片不用总是居中显示</li>
@@ -365,7 +365,8 @@
 <li>[ ] 多选择流程图绘画</li>
 <li>[ ] 复选框功能</li>
 </ul>
-
+<p>修改了<a href="http://www.jq22.com/jquery-info3321" target="_blank" rel="external">折叠样式</a><br>在<code>themes\next\source\css\_common\components\pages\schedule.styl</code>中增加了一部分代码，使得在<code>about</code>页面可以隐藏一份简历，代码如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*自定义图标，可用图片或字符,如果使用图片，请把content的值设置成空字符*/</span></div><div class="line"><span class="comment">/*展开*/</span></div><div class="line"><span class="selector-class">.menu</span> <span class="selector-tag">summary</span><span class="selector-pseudo">:before</span> &#123;</div><div class="line">     <span class="attribute">content</span>: <span class="string">"--"</span>;</div><div class="line">     <span class="comment">/*background: url(../Images/right.png) no-repeat center center;*/</span> <span class="comment">/*收起时的图片*/</span></div><div class="line">     <span class="comment">/*vertical-align: middle;*/</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/*收起*/</span></div><div class="line"><span class="selector-class">.menu</span><span class="selector-attr">[open]</span> <span class="selector-tag">summary</span><span class="selector-pseudo">:before</span> &#123;</div><div class="line">    <span class="attribute">content</span>: <span class="string">"--"</span>;</div><div class="line">    <span class="comment">/*background: url(../Images/down.png) no-repeat center center;*/</span> <span class="comment">/*展开时的图片*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -610,7 +611,7 @@
 -->
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Count: 23.0k Words</span>
+  <span class="post-count">Count: 23.1k Words</span>
 </div>
         
 
