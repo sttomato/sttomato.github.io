@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/child/2017/10/06/Hexo%E4%B8%AD%E6%B2%A1%E6%9C%89%E6%90%9E%E5%AE%9A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%8A%9F%E8%83%BD/</loc>
+    
+    <lastmod>2017-10-29T05:43:15.252Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/child/about/index.html</loc>
     
-    <lastmod>2017-10-28T15:50:56.036Z</lastmod>
+    <lastmod>2017-10-29T04:53:32.772Z</lastmod>
     
   </url>
   
@@ -117,13 +124,6 @@
     <loc>http://yoursite.com/child/2017/09/29/Data-Structure/</loc>
     
     <lastmod>2017-10-06T14:22:24.507Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/child/2017/10/06/Hexo%E4%B8%AD%E6%B2%A1%E6%9C%89%E6%90%9E%E5%AE%9A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%8A%9F%E8%83%BD/</loc>
-    
-    <lastmod>2017-10-06T12:10:02.712Z</lastmod>
     
   </url>
   

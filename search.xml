@@ -47,7 +47,7 @@
     <entry>
       <title><![CDATA[Hexo中没有搞定的几个功能]]></title>
       <url>%2F2017%2F10%2F06%2FHexo%E4%B8%AD%E6%B2%A1%E6%9C%89%E6%90%9E%E5%AE%9A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%8A%9F%E8%83%BD%2F</url>
-      <content type="text"><![CDATA[以下是希望有的功能，但是目前还不知道如何实现 [ ] 去掉图片周围的边框 [ ] 图片不用总是居中显示 [ ] 代码折叠 [ ] 多选择流程图绘画 [ ] 复选框功能]]></content>
+      <content type="text"><![CDATA[以下是希望有的功能，但是目前还不知道如何实现 [x] 去掉图片周围的边框进入目录themes\next\source\css\_common\components\post，打开文件post-expand.styl，搜索找到img，修改变量border后面的颜色编码，原是#ddd，改完之后是#FFF [ ] 图片不用总是居中显示 [ ] 代码折叠 [ ] 多选择流程图绘画 [ ] 复选框功能]]></content>
     </entry>
 
     

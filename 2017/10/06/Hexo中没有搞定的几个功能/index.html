@@ -81,7 +81,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="坑," />
 
 
 
@@ -98,13 +98,13 @@
 
 
 <meta name="description" content="以下是希望有的功能，但是目前还不知道如何实现">
-<meta name="keywords">
+<meta name="keywords" content="坑">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo中没有搞定的几个功能">
 <meta property="og:url" content="http://yoursite.com/child/2017/10/06/Hexo中没有搞定的几个功能/index.html">
 <meta property="og:site_name" content="Tomato | 日狗少年的吃瓜日常">
 <meta property="og:description" content="以下是希望有的功能，但是目前还不知道如何实现">
-<meta property="og:updated_time" content="2017-10-06T12:10:02.712Z">
+<meta property="og:updated_time" content="2017-10-29T05:43:15.252Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo中没有搞定的几个功能">
 <meta name="twitter:description" content="以下是希望有的功能，但是目前还不知道如何实现">
@@ -206,26 +206,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
@@ -242,6 +222,26 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -359,7 +359,7 @@
         <p>以下是希望有的功能，但是目前还不知道如何实现</p>
 <a id="more"></a>
 <ul>
-<li>[ ] 去掉图片周围的边框</li>
+<li>[x] 去掉图片周围的边框<br>进入目录<code>themes\next\source\css\_common\components\post</code>，打开文件<code>post-expand.styl</code>，搜索找到<code>img</code>，修改变量<code>border</code>后面的颜色编码，原是<code>#ddd</code>，改完之后是<code>#FFF</code></li>
 <li>[ ] 图片不用总是居中显示</li>
 <li>[ ] 代码折叠</li>
 <li>[ ] 多选择流程图绘画</li>
@@ -387,6 +387,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/坑/" rel="tag"><i class="fa fa-tag"></i> 坑</a>
+          
+        </div>
       
 
       
@@ -438,6 +444,8 @@
 
           
   <div class="comments" id="comments">
+    
+	  <div id="gitalk-container"></div>
     
   </div>
 
@@ -502,7 +510,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -602,7 +610,7 @@
 -->
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Count: 22.9k Words</span>
+  <span class="post-count">Count: 23.0k Words</span>
 </div>
         
 
@@ -728,6 +736,23 @@
 
 
 
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+var gitalk = new Gitalk({
+clientID: '672f8f00cb27df4f3c09',
+clientSecret: 'e4adc0284f9fce90072c64445282ade1c8a8cb81',
+repo: 'gitalkComments',
+owner: 'sttomato',
+admin: ['sttomato'],
+id: location.pathname,
+distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container')
+</script>
 
 
 
