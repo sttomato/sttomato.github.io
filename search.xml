@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[值得学习的博客]]></title>
+      <url>%2F2017%2F10%2F30%2F%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%8D%9A%E5%AE%A2%2F</url>
+      <content type="text"><![CDATA[爱可可老师 litten的博客]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[爬虫——从入门到肾亏]]></title>
       <url>%2F2017%2F10%2F27%2F%E7%88%AC%E8%99%AB%E2%80%94%E2%80%94%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E8%82%BE%E4%BA%8F%2F</url>
       <content type="text"><![CDATA[最近，懒癌晚期生不如死贪生怕死的摸鱼狂魔不想改论文又害怕被老板骂的纠结心情下，想找点事情放松一下，就尝试开车做了一点爬虫。 概述效果基本还阔以，有会爬的网站，也有不会的，罗列一下。 爬到东西的网站： 小猪短租 (爬了一些房源信息，比如价格，地理位置之类的) 煎蛋网 (三俗图片) B站相册 (cos + 画册) 福利社 (内容和站名一样耿直，不解释了) 没爬到东西的网站： 网易LOFTER (目前只会爬一个页面，页面跳转需要点击网页元素，不支持粗暴的url爬取) 花瓣网 (可能是需要登录或者加headers设置，没搞定，没爬到东西) 除了小猪短租是文本其他的都主要是以图片为主，其实小猪上的文本还是很有价值的，比如分析地理位置和价格的关系，统计一下房东有多少套房之类的，这些都没有做，统统没有做，最简单的都没有，这次只为开车！ 下面简单说一下，我为躲避科研都干了啥。 煎蛋网 域名(url)：https://jandan.net/ 选择，“妹子图”，点进去后的地址是长这样的 “https://jandan.net/ooxx“ (你看看这链接←_←)，整个“妹子图”版块是像贴吧一样盖楼盖起来的，然后当前页面是该主题下的最后一页。 我们找到第一页。在没搞爬虫之前我想到只有一页页往回翻，但这太慢了，等真翻到第一页，早就软了。其实，我们发现翻了一页之后链接地址就大概是这样了 “https://jandan.net/ooxx/page-234#comments“ ，看到page后面的数字了么，所以只要改数字就可以翻页了么？是的，这个网站就这么搞。链接 “https://jandan.net/ooxx/page-1#comments“ 就是“妹子图”版块的第一页(网易LOFTER让我爬不动的原因就是此路不通，毕竟我还是一个宝宝┑(￣Д ￣)┍)。所以理论上，现在我们可以爬取从当前页到第一页的所有页面了。 还有一个坑是，图片右键“检查”之后，定位到的图片链接不是原图，导致两个问题。第一，爬到的jpg图片比原图略小，从省流量的角度看，这个尚可以忍受；第二，gif图片不仅变小了很多，而且还特么不动了！这还撸个毛(／‵口′)／~╧╧，正当我紧张到汗流浃背不知所措的时候，我发现原图的链接就在定位链接的上面(°Д°)。 这样基本就可以写代码了，用python的BeautifulSoup库就可以搞定了。目前总共有235个页面，我心慈手软就只爬了100个页面，主要原因还是营养快线学校流量太贵了。 成果展示一下: 好了，不能更多了，溜了溜了~ B站相册 域名(url)：https://h.bilibili.com/ 进入cosplay页面，地址”https://h.bilibili.com/eden/picture_area#/?class=cos&amp;tag=&amp;dateSort=%E6%8E%A8%E8%8D%90“ ，从链接来看，唔……瞬间懵逼，然后尝试右键”检查”(啊，喂！不要对着妹子的内衣点检查啊，混蛋！)，然后点击上方的Network标签，勾选Hide data URLs，点击XHR，然后刷新网站，从罗列出来的信息中，找到一个名字很长的，叫……太长了不列出来了，见下图。然后食指快速拨弄鼠标右键两次直到页面颤抖着弹出一个新的窗口，进入下一步。 新弹出来页面里都是文本信息，但是却包含了想要爬取的全部内容(不包括coser的三围)，其文本组建形式用的是JSON，我没怎么用过这个库，顺手就把她解析成了python的字典类型，然后再一层层探进去，想要啥就摸啥了，没啥抵抗能力的⁄(⁄⁄•⁄ω⁄•⁄⁄)⁄。我主要取了coser的昵称、主题当然还有图片这三个信息用于保存。 碰到的坑，我一开始的想法是把coser的主题作为文件夹，然后在文件夹下面用coser昵称命名，以tomato为例，就是tomato_1.avijpg，tomtao_2.jpg……以此类推。碰到两个问题，一个是coser命名的主题和昵称有可能不符合文件或文件夹命名规范，删除或者替换违法字符；二，用coser的昵称作为文件夹，然后用主题命名图片更好，因为有些coser还真是相当高产呢(当然也可以在昵称文件夹下再建立一个主题文件夹) 效果展示如下： 另外，还爬取了绘画的相册，方法一毛一样，这次把文件目录整理得更好一点惹。 福利社写到这里，我的羞耻感快要爆棚了。 域名(url): “http://www.182fl.com/?cate=6&amp;page=1“ 这是随手找到的一个野生写真女郎福利站(那个说我从收藏夹里翻出来的同学，今晚你没有营养快线喝了)，对于爬虫萌新来说简直不能更友好。老办法，对着图片右键检查，定位的地方不是想要的图片地址这个套路大家已经都懂了，只要爬取上一层结构中的地址就可以，基于此地址就是模特图集地址了~ 由于每个模特的图集页数不是一个固定的数字，也就是说我不知道总共有多少页，如果用爬“煎蛋网”的方法来处理就会出错。当我正在思考如何爬取该图集下全部图片的时候，我发现了下图这个。点击“显示全文”，地址变成了”http://www.182fl.com/?id=4725&amp;page=all“ ，也就是说只要在第2步中加上’&amp;page=all’就可以获得这个整个图集下面的图片链接了。 这个基本没有啥坑，效果如下(因为还在图书馆，细节先不放了。对，我还要脸(￣▽￣)： 代码地址还在考虑要不要放代码。主要原因，没别的，还是……要脸 (ﾉ) ｪ(ヾ)实在想看的话，可以去我的gay吧……]]></content>
@@ -46,7 +53,7 @@
     
     <entry>
       <title><![CDATA[Hexo优化实验]]></title>
-      <url>%2F2017%2F10%2F06%2FHexo%E4%B8%AD%E6%B2%A1%E6%9C%89%E6%90%9E%E5%AE%9A%E7%9A%84%E5%87%A0%E4%B8%AA%E5%8A%9F%E8%83%BD%2F</url>
+      <url>%2F2017%2F10%2F06%2FHexo%E4%BC%98%E5%8C%96%E5%AE%9E%E9%AA%8C%2F</url>
       <content type="text"><![CDATA[用于记录不知道怎么优化的问题，和记录被改过的部分。 以下是希望有的功能，但是目前还不知道如何实现 [x] 去掉图片周围的边框进入目录themes\next\source\css\_common\components\post，打开文件post-expand.styl，搜索找到img，修改变量border后面的颜色编码，原是#ddd，改完之后是#FFF [ ] 图片不用总是居中显示 [ ] 代码折叠 [ ] 多选择流程图绘画 [ ] 复选框功能 修改了折叠样式在themes\next\source\css\_common\components\pages\schedule.styl中增加了一部分代码，使得在about页面可以隐藏一份简历，代码如下： 12345678910111213/*自定义图标，可用图片或字符,如果使用图片，请把content的值设置成空字符*//*展开*/.menu summary:before &#123; content: "--"; /*background: url(../Images/right.png) no-repeat center center;*/ /*收起时的图片*/ /*vertical-align: middle;*/&#125;/*收起*/.menu[open] summary:before &#123; content: "--"; /*background: url(../Images/down.png) no-repeat center center;*/ /*展开时的图片*/&#125;]]></content>
     </entry>
 
@@ -87,8 +94,8 @@
 
     
     <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>%2F2017%2F09%2F14%2Fhello-world%2F</url>
+      <title><![CDATA[Hexo使用指南]]></title>
+      <url>%2F2017%2F09%2F14%2FHexo%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97%2F</url>
       <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: DeploymentMore Tips:数学符号Latex math symbol 主题个性化hexo流程图hexo-filter-flowchart Hexo之NexT主题搭建博客详细过程 Hexo docst=>start: Start|past:>http://www.google.com[blank] e=>end: End:>http://www.google.com op1=>operation: My Operation|past op2=>operation: Stuff|current sub1=>subroutine: My Subroutine|invalid cond=>condition: Yes or No?|approved:>http://www.google.com c2=>condition: Good idea|rejected io=>inputoutput: catch something...|request st->op1(right)->cond cond(yes, right)->c2 cond(no)->sub1(left)->op1 c2(yes)->io->e c2(no)->op2->e{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12} var code = document.getElementById("flowchart-0-code").value; var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value)); var diagram = flowchart.parse(code); diagram.drawSVG("flowchart-0", options);]]></content>
     </entry>
 
