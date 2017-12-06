@@ -114,10 +114,13 @@
 <meta property="og:url" content="http://yoursite.com/child/2017/10/06/Hexo优化实验/index.html">
 <meta property="og:site_name" content="Tomato | 日狗少年的吃瓜日常">
 <meta property="og:description" content="用于记录不知道怎么优化的问题，和记录被改过的部分。">
-<meta property="og:updated_time" content="2017-10-29T17:59:45.512Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5308475-8e8340c7a0489bce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5308475-f6355823aef7f723.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-12-06T07:09:58.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo优化实验">
 <meta name="twitter:description" content="用于记录不知道怎么优化的问题，和记录被改过的部分。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/5308475-8e8340c7a0489bce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -148,7 +151,6 @@
 
 
   <link rel="canonical" href="http://yoursite.com/child/2017/10/06/Hexo优化实验/"/>
-
 
 
 
@@ -249,9 +251,9 @@
         <li class="menu-item menu-item-collection">
           <a href="/collection/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-map-signs"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-truck"></i> <br />
             
-            collection
+            采集
           </a>
         </li>
       
@@ -411,22 +413,35 @@
 
       
         <p>用于记录不知道怎么优化的问题，和记录被改过的部分。<br><a id="more"></a></p>
-<p>以下是希望有的功能，但是目前还不知道如何实现</p>
-<ul>
+<h3 id="以下是希望有的功能，但是目前还不知道如何实现"><a href="#以下是希望有的功能，但是目前还不知道如何实现" class="headerlink" title="以下是希望有的功能，但是目前还不知道如何实现"></a>以下是希望有的功能，但是目前还不知道如何实现</h3><ul>
 <li>[x] 去掉图片周围的边框<br>进入目录<code>themes\next\source\css\_common\components\post</code>，打开文件<code>post-expand.styl</code>，搜索找到<code>img</code>，修改变量<code>border</code>后面的颜色编码，原是<code>#ddd</code>，改完之后是<code>#FFF</code></li>
 <li>[ ] 图片不用总是居中显示</li>
 <li>[ ] 代码折叠</li>
 <li>[ ] 多选择流程图绘画</li>
 <li>[ ] 复选框功能</li>
 </ul>
-<p>修改了<a href="http://www.jq22.com/jquery-info3321" target="_blank" rel="external">折叠样式</a><br>在<code>themes\next\source\css\_common\components\pages\schedule.styl</code>中增加了一部分代码，使得在<code>about</code>页面可以隐藏一份简历，代码如下：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*自定义图标，可用图片或字符,如果使用图片，请把content的值设置成空字符*/</span></div><div class="line"><span class="comment">/*展开*/</span></div><div class="line"><span class="selector-class">.menu</span> <span class="selector-tag">summary</span><span class="selector-pseudo">:before</span> &#123;</div><div class="line">     <span class="attribute">content</span>: <span class="string">"--"</span>;</div><div class="line">     <span class="comment">/*background: url(../Images/right.png) no-repeat center center;*/</span> <span class="comment">/*收起时的图片*/</span></div><div class="line">     <span class="comment">/*vertical-align: middle;*/</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/*收起*/</span></div><div class="line"><span class="selector-class">.menu</span><span class="selector-attr">[open]</span> <span class="selector-tag">summary</span><span class="selector-pseudo">:before</span> &#123;</div><div class="line">    <span class="attribute">content</span>: <span class="string">"--"</span>;</div><div class="line">    <span class="comment">/*background: url(../Images/down.png) no-repeat center center;*/</span> <span class="comment">/*展开时的图片*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="修改了折叠样式"><a href="#修改了折叠样式" class="headerlink" title="修改了折叠样式"></a>修改了<a href="http://www.jq22.com/jquery-info3321" target="_blank" rel="external">折叠样式</a></h3><p>在<code>themes\next\source\css\_custom\custom.styl</code>中增加了一部分代码，使得在<code>about</code>页面可以隐藏一份简历，代码如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*去掉自带的小三角*/</span></div><div class="line"><span class="selector-tag">details</span> <span class="selector-tag">summary</span><span class="selector-pseudo">::-webkit-details-marker</span> &#123;</div><div class="line">  <span class="attribute">display</span>: none;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*自定义图标，可用图片或字符,如果使用图片，请把content的值设置成空字符*/</span></div><div class="line"><span class="comment">/*展开*/</span></div><div class="line"><span class="selector-class">.menu</span> <span class="selector-tag">summary</span><span class="selector-pseudo">:before</span> &#123;</div><div class="line">     <span class="attribute">content</span>: <span class="string">"--"</span>;</div><div class="line">     <span class="comment">/*background: url(../Images/right.png) no-repeat center center;*/</span> <span class="comment">/*收起时的图片*/</span></div><div class="line">     <span class="comment">/*vertical-align: middle;*/</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/*收起*/</span></div><div class="line"><span class="selector-class">.menu</span><span class="selector-attr">[open]</span> <span class="selector-tag">summary</span><span class="selector-pseudo">:before</span> &#123;</div><div class="line">    <span class="attribute">content</span>: <span class="string">"--"</span>;</div><div class="line">    <span class="comment">/*background: url(../Images/down.png) no-repeat center center;*/</span> <span class="comment">/*展开时的图片*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="底部-改为标签"><a href="#底部-改为标签" class="headerlink" title="底部#改为标签"></a>底部#改为标签</h3><p>修改模板<code>/themes/next/layout/_macro/post.swig</code>，搜索 <code>rel=&quot;tag&quot;&gt;#</code>，将 # 换成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code></p>
+<h3 id="隐藏网页底部powered-By-Hexo-强力驱动"><a href="#隐藏网页底部powered-By-Hexo-强力驱动" class="headerlink" title="隐藏网页底部powered By Hexo / 强力驱动"></a>隐藏网页底部powered By Hexo / 强力驱动</h3><p>打开<code>themes/next/layout/_partials/footer.swig</code>,使用注释相关的代码即可，或者直接删除。位置如图：<br><img src="http://upload-images.jianshu.io/upload_images/5308475-8e8340c7a0489bce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="400"></p>
+<h3 id="修改网页底部的桃心"><a href="#修改网页底部的桃心" class="headerlink" title="修改网页底部的桃心"></a>修改网页底部的桃心</h3><p>还是打开<code>themes/next/layout/_partials/footer.swig</code>，找到图标代码，然后修改图标：<br><img src="http://upload-images.jianshu.io/upload_images/5308475-f6355823aef7f723.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<h3 id="自定义鼠标样式"><a href="#自定义鼠标样式" class="headerlink" title="自定义鼠标样式"></a>自定义鼠标样式</h3><p>打开<code>themes/next/source/css/_custom/custom.styl</code>,在里面写下如下代码:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 鼠标样式</div><div class="line">  * &#123;</div><div class="line">      cursor: url("http://om8u46rmb.bkt.clouddn.com/sword2.ico"),auto!important</div><div class="line">  &#125;</div><div class="line">  :active &#123;</div><div class="line">      cursor: url("http://om8u46rmb.bkt.clouddn.com/sword1.ico"),auto!important</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+
       
     </div>
     
     
     
-
+	<div>
+	  
+		<div>
+    
+        <!-- <div style="text-align:center;color: #acc;font-size:14px;">-----------------------<i class="fa fa-bug" aria-hidden="true"></i><i class="fa fa-bug" aria-hidden="true"></i><i class="fa fa-bug" aria-hidden="true"></i><i class="fa fa-bug" aria-hidden="true"></i><i class="fa fa-bug" aria-hidden="true"></i><i class="fa fa-bug" aria-hidden="true"></i><i class="fa fa-bug" aria-hidden="true"></i><i class="fa fa-bug" aria-hidden="true"></i><i class="fa fa-bug" aria-hidden="true"></i>-----------------------</div> -->
+		<div style="text-align:center;color: #acc;font-size:14px;"><hr /></div>
+    
+</div>
+	  
+	</div>
     
 
     
@@ -437,31 +452,16 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
           
-            <a href="/tags/坑/" rel="tag"># 坑</a>
+            <a href="/tags/坑/" rel="tag"><i class="fa fa-tag"></i> 坑</a>
           
-            <a href="/tags/优化/" rel="tag"># 优化</a>
+            <a href="/tags/优化/" rel="tag"><i class="fa fa-tag"></i> 优化</a>
           
         </div>
       
 
       
-      
-        <div class="post-widgets">
-        
-
-        
-
-        
-          
-          <div id="needsharebutton-postbottom">
-            <span class="btn">
-              <i class="fa fa-share-alt" aria-hidden="true"></i>
-            </span>
-          </div>
-        
-        </div>
       
       
 
@@ -536,8 +536,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -642,6 +651,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#以下是希望有的功能，但是目前还不知道如何实现"><span class="nav-number">1.</span> <span class="nav-text">以下是希望有的功能，但是目前还不知道如何实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改了折叠样式"><span class="nav-number">2.</span> <span class="nav-text">修改了折叠样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#底部-改为标签"><span class="nav-number">3.</span> <span class="nav-text">底部#改为标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐藏网页底部powered-By-Hexo-强力驱动"><span class="nav-number">4.</span> <span class="nav-text">隐藏网页底部powered By Hexo / 强力驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改网页底部的桃心"><span class="nav-number">5.</span> <span class="nav-text">修改网页底部的桃心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义鼠标样式"><span class="nav-number">6.</span> <span class="nav-text">自定义鼠标样式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -657,13 +682,14 @@
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-superpowers"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">St. Tomato</span>
 
   
 </div>
 
+<!--
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
@@ -675,9 +701,15 @@
 
   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
 
+-->
 
 
-
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <!-- <span class="post-count">0</span>
+  <span class="post-count">1</span> -->
+  <span class="post-count">Cite Totalcount: 23.3k Words</span>
+</div>
         
 
 
@@ -1288,18 +1320,6 @@ gitalk.render('gitalk-container')
   <script src="/lib/needsharebutton/needsharebutton.js"></script>
 
   <script>
-    
-      pbOptions = {};
-      
-          pbOptions.iconStyle = "box";
-      
-          pbOptions.boxForm = "horizontal";
-      
-          pbOptions.position = "bottomCenter";
-      
-          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-postbottom', pbOptions);
     
     
       flOptions = {};
