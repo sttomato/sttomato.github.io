@@ -541,7 +541,7 @@ c2(no)->op2->e</textarea><textarea id="flowchart-0-options" style="display: none
           
 
   
-	<div id="gitalk-container"></div>
+    <div id="gitalk-container"></div>
 	<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
   
 
@@ -887,22 +887,21 @@ c2(no)->op2->e</textarea><textarea id="flowchart-0-options" style="display: none
 
 
 
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-const gitalk = new Gitalk({
-clientID: '22c9bfa9a04f2945d7e7',
-clientSecret: 'cdd247e0a553c3d3f79c248e724ca12179a3888c',
-repo: 'gitalk',
-owner: 'sttomato',
-admin: 'sttomato',
-id: location.pathname,
-distractionFreeMode: 'false'
-})
-gitalk.render('gitalk-container')
-</script>
-
-
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+		var gitalk = new Gitalk({
+		  clientID: '672f8f00cb27df4f3c09',
+		  clientSecret: 'e4adc0284f9fce90072c64445282ade1c8a8cb81',
+		  repo: 'gitalkComments',
+		  owner: 'sttomato',
+		  admin: ['sttomato'], 
+		  id: location.pathname,
+		  distractionFreeMode: 'true'
+		})
+		gitalk.render('gitalk-container')           
+       </script>
 
   
 
