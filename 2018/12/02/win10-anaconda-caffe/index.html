@@ -128,7 +128,7 @@
 <meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/bb7e144agy1fxsoxpu01ij20fn0cd74y.jpg">
 <meta property="og:image" content="https://wx4.sinaimg.cn/mw1024/bb7e144agy1fxsoxpu1wbj20lg08swel.jpg">
 <meta property="og:image" content="https://wx2.sinaimg.cn/mw1024/bb7e144agy1fxsoxpwblmj20et046dfq.jpg">
-<meta property="og:updated_time" content="2018-12-02T13:31:06.935Z">
+<meta property="og:updated_time" content="2018-12-02T13:43:15.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建沙雕工作站——Win10上面装Caffe">
 <meta name="twitter:description" content="这个故事说来话长，我从双十一买了电脑之后就一直在折腾双系统，眼看双十二都快要到了，我的双系统还是没有搞成，索性就搞一搞windows吧">
@@ -443,45 +443,23 @@
 <li>把上面的<code>.zip</code>压缩包删了，安装Git，<code>git clone https://github.com/BVLC/caffe.git</code></li>
 <li>下载cmake，把<code>./bin</code>配置到环境变量中</li>
 <li><code>cd caffe</code>, <code>git checkout windows</code></li>
-<li>notepad++打开<code>caffe/scripts/</code>下面的<code>build_win.cmd</code>文件</li>
-</ol>
-<ul>
-<li>基本参数配置<br><img src="https://wx1.sinaimg.cn/mw1024/bb7e144agy1fxspyyyfjzj20th0es75l.jpg" alt=""></li>
-<li>cudnn包含路径<br><img src="https://wx3.sinaimg.cn/mw1024/bb7e144agy1fxspyyueixj20j40cygmm.jpg" alt=""></li>
-<li>注：<br>（1）MSVC_VERSION 根据你VS项目版本来，<code>14</code>对应VS2015的项目，<code>12</code>对应VS2013的项目<br>（2）只使用CPU的将 <code>CPU_ONLY</code> 改为<code>1</code><br>（3）<code>PYTHON_VERSION</code> 根据你本机版本来，我是2.7所以是2，3.5就是3<br>（4）<code>CUDA_ARCH_NAME</code> 是CUDA的架构名称，可选值有：Kepler，Fermi，Maxwell，Pascal，Manual，All，Auto，Auto是自动检测最优值<br>（5）<code>WITH_NINJA</code> 要设为0，你不会用到ninja编译器来进行编译<br>（6）改完后去<code>scripts\build</code>中把 <code>CMakeCache.txt</code> 文件删掉。因为这里面记录的是用Ninja来编译的，不删除的话不能用VS来编译<br>（7）在多个 GPU 上运行 Caffe 需要使用 <code>NVIDIA NCCL</code></li>
-</ul>
-<ol>
-<li>执行 <code>scripts/build_win.cmd</code>，报错。报错信息主要是说v140没有对应python 3.6的配置方案。这里涉及到VS版本和python版本的对应关系是v140+python2.7或者v140+python3.5，因为前面已经把tensorflow装到了python 3.6里，这次不能删除再装过python 3.5。因此，我采用了虚拟机方案</li>
-</ol>
-<ul>
-<li><code>conda create -n py35 python=3.5</code></li>
-<li><code>activate py35</code></li>
-<li><code>conda install anaconda</code></li>
-</ul>
-<ol>
-<li>再次 <code>scripts/build_win.cmd</code>，报错。一个名为“libraries_v140_x64_py27_1.1.0.tar.bz2”的依赖包无法下载成功。</li>
-</ol>
-<ul>
-<li>可以从<a href="https://github.com/willyd/caffe-builder/releases" target="_blank" rel="external">https://github.com/willyd/caffe-builder/releases</a>下载</li>
-<li>直接点下载没有成功过，可以右键把链接地址复制到迅雷里面挂着下载还挺快的。</li>
-<li>然后把依赖包放在对应的依赖目录里面，这个报错信息会提示，一般就在<code>C:\Users\username\.caffe\dependencies\download</code></li>
-<li>手动修改<code>caffe/camkae</code>下面WindowsDownloadPrebuiltDependencies.cmake文件<br><img src="https://wx1.sinaimg.cn/mw1024/bb7e144agy1fxspyz4zxlj20n40dwq4k.jpg" alt=""></li>
-</ul>
-<ol>
-<li>再次执行 <code>scripts/build_win.cmd</code>，cmake应该就将Caffe.sln工程编译好了<br><img src="https://wx2.sinaimg.cn/mw1024/bb7e144agy1fxsokvp6qtj212w0brjs2.jpg" alt=""></li>
+<li><p>notepad++打开<code>caffe/scripts/</code>下面的<code>build_win.cmd</code>文件<br>基本参数配置<br><img src="https://wx1.sinaimg.cn/mw1024/bb7e144agy1fxspyyyfjzj20th0es75l.jpg" alt=""><br>cudnn包含路径<br><img src="https://wx3.sinaimg.cn/mw1024/bb7e144agy1fxspyyueixj20j40cygmm.jpg" alt=""><br>注：<br>（1）MSVC_VERSION 根据你VS项目版本来，<code>14</code>对应VS2015的项目，<code>12</code>对应VS2013的项目<br>（2）只使用CPU的将 <code>CPU_ONLY</code> 改为<code>1</code><br>（3）<code>PYTHON_VERSION</code> 根据你本机版本来，我是2.7所以是2，3.5就是3<br>（4）<code>CUDA_ARCH_NAME</code> 是CUDA的架构名称，可选值有：Kepler，Fermi，Maxwell，Pascal，Manual，All，Auto，Auto是自动检测最优值<br>（5）<code>WITH_NINJA</code> 要设为0，你不会用到ninja编译器来进行编译<br>（6）改完后去<code>scripts\build</code>中把 <code>CMakeCache.txt</code> 文件删掉。因为这里面记录的是用Ninja来编译的，不删除的话不能用VS来编译<br>（7）在多个 GPU 上运行 Caffe 需要使用 <code>NVIDIA NCCL</code></p>
+</li>
+<li><p>执行 <code>scripts/build_win.cmd</code>，报错。报错信息主要是说v140没有对应python 3.6的配置方案。这里涉及到VS版本和python版本的对应关系是v140+python2.7或者v140+python3.5，因为前面已经把tensorflow装到了python 3.6里，这次不能删除再装过python 3.5。因此，我采用了虚拟机方案<br>(1) <code>conda create -n py35 python=3.5</code><br>(2) <code>activate py35</code><br>(3) <code>conda install anaconda</code></p>
+</li>
+<li><p>再次 <code>scripts/build_win.cmd</code>，报错。一个名为“libraries_v140_x64_py27_1.1.0.tar.bz2”的依赖包无法下载成功。<br>(1) 可以从<a href="https://github.com/willyd/caffe-builder/releases" target="_blank" rel="external">https://github.com/willyd/caffe-builder/releases</a>下载<br>(2) 直接点下载没有成功过，可以右键把链接地址复制到迅雷里面挂着下载还挺快的。<br>(3) 然后把依赖包放在对应的依赖目录里面，这个报错信息会提示，一般就在<code>C:\Users\username\.caffe\dependencies\download</code><br>(4) 手动修改<code>caffe/camkae</code>下面WindowsDownloadPrebuiltDependencies.cmake文件<br><img src="https://wx1.sinaimg.cn/mw1024/bb7e144agy1fxspyz4zxlj20n40dwq4k.jpg" alt=""></p>
+</li>
+<li><p>再次执行 <code>scripts/build_win.cmd</code>，cmake应该就将Caffe.sln工程编译好了<br><img src="https://wx2.sinaimg.cn/mw1024/bb7e144agy1fxsokvp6qtj212w0brjs2.jpg" alt=""></p>
+</li>
 <li>进入<code>caffe/build</code>，用VS2015打开<code>caffe.sln</code>，右键ALL_BUILD，点击生成<br><img src="https://wx4.sinaimg.cn/mw1024/bb7e144agy1fxspyz2ex8j20oh0gqwg9.jpg" alt=""><br>编译完成：<br><img src="https://wx3.sinaimg.cn/mw1024/bb7e144agy1fxsokwaqy6j20i40as3zq.jpg" alt=""></li>
-<li>由于本人的powershell设置有点问题导致不能直接运行<code>.\examples\mnist\create_mnist.ps1</code>，<br>因此把ps1脚本里的命令单独拆分出来运行。</li>
+<li>由于本人的powershell设置有点问题导致不能直接运行<code>.\examples\mnist\create_mnist.ps1</code>，<br>因此把ps1脚本里的命令单独拆分出来运行。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.\build\examples\mnist\Release\convert_mnist_data.exe .\examples\mnist\train-images.idx3-ubyte ` .\examples\mnist\train-labels.idx1-ubyte .\examples\mnist\mnist_train_lmdb</div></pre></td></tr></table></figure>
+</li>
 </ol>
-<ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.\build\examples\mnist\Release\convert_mnist_data.exe .\examples\mnist\train-images.idx3-ubyte ` .\examples\mnist\train-labels.idx1-ubyte .\examples\mnist\mnist_train_lmdb</div></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.\build\examples\mnist\Release\convert_mnist_data.exe .\examples\mnist\t10k-images.idx3-ubyte \` .\examples\mnist\t10k-labels.idx1-ubyte .\examples\mnist\mnist_test_lmdb</div></pre></td></tr></table></figure>
-</li>
-</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.\build\examples\mnist\Release\convert_mnist_data.exe .\examples\mnist\t10k-images.idx3-ubyte \` .\examples\mnist\t10k-labels.idx1-ubyte .\examples\mnist\mnist_test_lmdb</div></pre></td></tr></table></figure>
 <p><img src="https://wx2.sinaimg.cn/mw1024/bb7e144agy1fxsokvt34wj20r907imxl.jpg" alt=""></p>
 <ol>
 <li>同样的问题，训练用train_mnist.ps1，我也把运行命令抽出来跑（不过，应该可以写到.bat命令里面）<br><code>.\build\tools\Release\caffe.exe train --solver=.\examples\mnist\lenet_solver.prototxt</code><br><img src="https://wx1.sinaimg.cn/mw1024/bb7e144agy1fxsokvuq7dj20qy05iglm.jpg" alt=""><br>可以看到使用GPUs: 0，最终训练完成，达到精度0.99，耗时约半分钟<br><img src="https://wx1.sinaimg.cn/mw1024/bb7e144agy1fxsokvwa3yj20qw06jjrl.jpg" alt=""><br>另外，实验表明，单独写一个bat文件作为入口同样可行<br><img src="https://wx2.sinaimg.cn/mw1024/bb7e144agy1fxsokw7ailj20rv0t3jtf.jpg" alt=""></li>
-<li>在Windows上搜索<code>Anaconda Navigator</code>，进入之后把<code>root</code>切换到<code>py35</code>，点击spyder下面Launch，进入之前敲入以下代码：<br><img src="https://wx4.sinaimg.cn/mw1024/bb7e144agy1fxsokvmg2ij20eo062aa0.jpg" alt=""><br>报错，WTF！！！<br><img src="https://wx1.sinaimg.cn/mw1024/bb7e144agy1fxsoxpu01ij20fn0cd74y.jpg" alt=""><br>Google了一下，<a href="https://stackoverflow.com/questions/37666241/importing-caffe-results-in-importerror-no-module-named-google-protobuf-interna" target="_blank" rel="external">https://stackoverflow.com/questions/37666241/importing-caffe-results-in-importerror-no-module-named-google-protobuf-interna</a> 安装prototxt<br><img src="https://wx4.sinaimg.cn/mw1024/bb7e144agy1fxsoxpu1wbj20lg08swel.jpg" alt=""><br>成功导入caffe<br><img src="https://wx2.sinaimg.cn/mw1024/bb7e144agy1fxsoxpwblmj20et046dfq.jpg" alt=""></li>
+<li>在Windows上搜索<code>Anaconda Navigator</code>，进入之后把<code>root</code>切换到<code>py35</code>，点击spyder下面Launch，进去后敲入以下代码：<br><img src="https://wx4.sinaimg.cn/mw1024/bb7e144agy1fxsokvmg2ij20eo062aa0.jpg" alt=""><br>报错，WTF！！！<br><img src="https://wx1.sinaimg.cn/mw1024/bb7e144agy1fxsoxpu01ij20fn0cd74y.jpg" alt=""><br>Google了一下，<a href="https://stackoverflow.com/questions/37666241/importing-caffe-results-in-importerror-no-module-named-google-protobuf-interna" target="_blank" rel="external">https://stackoverflow.com/questions/37666241/importing-caffe-results-in-importerror-no-module-named-google-protobuf-interna</a> 安装prototxt<br><img src="https://wx4.sinaimg.cn/mw1024/bb7e144agy1fxsoxpu1wbj20lg08swel.jpg" alt=""><br>成功导入caffe<br><img src="https://wx2.sinaimg.cn/mw1024/bb7e144agy1fxsoxpwblmj20et046dfq.jpg" alt=""></li>
 </ol>
 
       
