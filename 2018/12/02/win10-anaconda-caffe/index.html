@@ -128,7 +128,7 @@
 <meta property="og:image" content="https://wx1.sinaimg.cn/mw1024/bb7e144agy1fxsoxpu01ij20fn0cd74y.jpg">
 <meta property="og:image" content="https://wx4.sinaimg.cn/mw1024/bb7e144agy1fxsoxpu1wbj20lg08swel.jpg">
 <meta property="og:image" content="https://wx2.sinaimg.cn/mw1024/bb7e144agy1fxsoxpwblmj20et046dfq.jpg">
-<meta property="og:updated_time" content="2018-12-02T14:16:49.204Z">
+<meta property="og:updated_time" content="2018-12-03T14:52:52.777Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建沙雕工作站——Win10上面装Caffe">
 <meta name="twitter:description" content="这个故事说来话长，我从双十一买了电脑之后就一直在折腾双系统，眼看双十二都快要到了，我的双系统还是没有搞成，索性就搞一搞windows吧">
@@ -453,15 +453,18 @@
 </li>
 <li><p>再次执行 <code>scripts/build_win.cmd</code>，cmake应该就将Caffe.sln工程编译好了<br><img src="https://wx2.sinaimg.cn/mw1024/bb7e144agy1fxsokvp6qtj212w0brjs2.jpg" alt=""></p>
 </li>
-<li>进入<code>caffe/build</code>，用VS2015打开<code>caffe.sln</code>，右键ALL_BUILD，点击生成<br><img src="https://wx4.sinaimg.cn/mw1024/bb7e144agy1fxspyz2ex8j20oh0gqwg9.jpg" alt=""><br>编译完成：<br><img src="https://wx3.sinaimg.cn/mw1024/bb7e144agy1fxsokwaqy6j20i40as3zq.jpg" alt=""></li>
-<li>由于本人的powershell设置有点问题导致不能直接运行<code>.\examples\mnist\create_mnist.ps1</code>，<br>因此把ps1脚本里的命令单独拆分出来运行。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.\build\examples\mnist\Release\convert_mnist_data.exe .\examples\mnist\train-images.idx3-ubyte ` .\examples\mnist\train-labels.idx1-ubyte .\examples\mnist\mnist_train_lmdb</div></pre></td></tr></table></figure>
+<li><p>进入<code>caffe/build</code>，用VS2015打开<code>caffe.sln</code>，右键ALL_BUILD，点击生成<br><img src="https://wx4.sinaimg.cn/mw1024/bb7e144agy1fxspyz2ex8j20oh0gqwg9.jpg" alt=""><br>编译完成：<br><img src="https://wx3.sinaimg.cn/mw1024/bb7e144agy1fxsokwaqy6j20i40as3zq.jpg" alt=""></p>
+</li>
+<li><p>由于本人的powershell设置有点问题导致不能直接运行<code>.\examples\mnist\create_mnist.ps1</code>，<br>因此把ps1脚本里的命令单独拆分出来运行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.\build\examples\mnist\Release\convert_mnist_data.exe .\examples\mnist\train-images.idx3-ubyte ` .\examples\mnist\train-labels.idx1-ubyte .\examples\mnist\mnist_train_lmdb</div><div class="line"></div><div class="line">.\build\examples\mnist\Release\convert_mnist_data.exe .\examples\mnist\t10k-images.idx3-ubyte \` .\examples\mnist\t10k-labels.idx1-ubyte .\examples\mnist\mnist_test_lmdb</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.\build\examples\mnist\Release\convert_mnist_data.exe .\examples\mnist\t10k-images.idx3-ubyte \` .\examples\mnist\t10k-labels.idx1-ubyte .\examples\mnist\mnist_test_lmdb</div></pre></td></tr></table></figure>
 <p><img src="https://wx2.sinaimg.cn/mw1024/bb7e144agy1fxsokvt34wj20r907imxl.jpg" alt=""></p>
 <ol>
-<li>同样的问题，训练用train_mnist.ps1，我也把运行命令抽出来跑（不过，应该可以写到.bat命令里面）<br><code>.\build\tools\Release\caffe.exe train --solver=.\examples\mnist\lenet_solver.prototxt</code><br><img src="https://wx1.sinaimg.cn/mw1024/bb7e144agy1fxsokvuq7dj20qy05iglm.jpg" alt=""><br>可以看到使用GPUs: 0，最终训练完成，达到精度0.99，耗时约半分钟<br><img src="https://wx1.sinaimg.cn/mw1024/bb7e144agy1fxsokvwa3yj20qw06jjrl.jpg" alt=""><br>另外，实验表明，单独写一个bat文件作为入口同样可行<br><img src="https://wx2.sinaimg.cn/mw1024/bb7e144agy1fxsokw7ailj20rv0t3jtf.jpg" alt=""></li>
-<li>在Windows上搜索<code>Anaconda Navigator</code>，进入之后把<code>root</code>切换到<code>py35</code>，点击spyder下面Launch，进去后敲入以下代码：<br><img src="https://wx4.sinaimg.cn/mw1024/bb7e144agy1fxsokvmg2ij20eo062aa0.jpg" alt=""><br>报错，WTF！！！<br><img src="https://wx1.sinaimg.cn/mw1024/bb7e144agy1fxsoxpu01ij20fn0cd74y.jpg" alt=""><br>Google了一下，<a href="https://stackoverflow.com/questions/37666241/importing-caffe-results-in-importerror-no-module-named-google-protobuf-interna" target="_blank" rel="external">https://stackoverflow.com/questions/37666241/importing-caffe-results-in-importerror-no-module-named-google-protobuf-interna</a> 安装prototxt<br><img src="https://wx4.sinaimg.cn/mw1024/bb7e144agy1fxsoxpu1wbj20lg08swel.jpg" alt=""><br>成功导入caffe<br><img src="https://wx2.sinaimg.cn/mw1024/bb7e144agy1fxsoxpwblmj20et046dfq.jpg" alt=""></li>
+<li><p>同样的问题，训练用train_mnist.ps1，我也把运行命令抽出来跑（不过，应该可以写到.bat命令里面）<br><code>.\build\tools\Release\caffe.exe train --solver=.\examples\mnist\lenet_solver.prototxt</code><br><img src="https://wx1.sinaimg.cn/mw1024/bb7e144agy1fxsokvuq7dj20qy05iglm.jpg" alt=""><br>可以看到使用GPUs: 0，最终训练完成，达到精度0.99，耗时约半分钟<br><img src="https://wx1.sinaimg.cn/mw1024/bb7e144agy1fxsokvwa3yj20qw06jjrl.jpg" alt=""><br>另外，实验表明，单独写一个bat文件作为入口同样可行<br><img src="https://wx2.sinaimg.cn/mw1024/bb7e144agy1fxsokw7ailj20rv0t3jtf.jpg" alt=""></p>
+</li>
+<li><p>在Windows上搜索<code>Anaconda Navigator</code>，进入之后把<code>root</code>切换到<code>py35</code>，点击spyder下面Launch，进去后敲入以下代码：<br><img src="https://wx4.sinaimg.cn/mw1024/bb7e144agy1fxsokvmg2ij20eo062aa0.jpg" alt=""><br>报错，WTF！！！<br><img src="https://wx1.sinaimg.cn/mw1024/bb7e144agy1fxsoxpu01ij20fn0cd74y.jpg" alt=""><br>Google了一下，<a href="https://stackoverflow.com/questions/37666241/importing-caffe-results-in-importerror-no-module-named-google-protobuf-interna" target="_blank" rel="external">https://stackoverflow.com/questions/37666241/importing-caffe-results-in-importerror-no-module-named-google-protobuf-interna</a> 安装prototxt<br><img src="https://wx4.sinaimg.cn/mw1024/bb7e144agy1fxsoxpu1wbj20lg08swel.jpg" alt=""><br>成功导入caffe<br><img src="https://wx2.sinaimg.cn/mw1024/bb7e144agy1fxsoxpwblmj20et046dfq.jpg" alt=""></p>
+</li>
 </ol>
 
       
