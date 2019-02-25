@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[vim常用命令]]></title>
       <url>%2F2019%2F01%2F13%2Fvim-cheatsheet%2F</url>
-      <content type="text"><![CDATA[常用配置常规操作 命令 说明 删除 x 删除光标下的字符 X 删除光标左边的字符 s 修改一个字符，进入insert模式 插入 i 光标前插入字符 a 光标后插入字符 A 行尾插入字符 o 光标下方插入空白行，进入insert模式 O 光标上方插入空白行，进入insert模式 替换 r 替换单个字符 R 替换多个字符 cw 或 ce 替换文本直到单词末尾]]></content>
+      <content type="text"><![CDATA[常用配置常规操作 命令 说明 删除 x 删除光标下的字符 X 删除光标左边的字符 s 修改一个字符，进入insert模式 插入 i 光标前插入字符 a 光标后插入字符 A 行尾插入字符 o 光标下方插入空白行，进入insert模式 O 光标上方插入空白行，进入insert模式 替换 r 替换单个字符 R 替换多个字符 cw 或 ce 替换文本直到单词末尾 c$ 替换文本直到行尾 dw 或 de 或 d2w 删除单词 d$ 或 D 删除到行尾 S 删除到行为，并进入Insert模式 dd 删除整行 y 复制 yy 或 yw 或 ye 复制整行 p 粘贴到光标之后 P 粘贴到光标之前 u 撤销 . 重复上一次操作 :! 执行外部名(:!dir/:lls) % 查找配对的括号 ),},] v motion :w 选择性保存 Ctrl + D 查看可能的补全 光标移动 命令 说明 h 左 l 右边 k 上 j 下 0 或 $ 行首 w 下一个单词起始处 nw n可为数字，表示移动两个单词 e 单词末尾(与w的区别) gg 文件起始处 G 文件末尾处 退出 命令 说明 :wq 保存并退出 ZZ 保存并退出 :q! 丢弃修改并退出(q退出，有修改的话q不能退出) :e! 丢弃修改并打开原文件 查找并替换 命令 说明 :s/old/new/g 查找old并替换为new， g代表整行匹配 :#, #s/old/new #,#代表首尾行号 :%s/old/new/g 全文匹配替换 :%s/old/new/gc 全文匹配替换，并每次替换会弹出确认提示 翻页 命令 说明 Ctrl + e 向下滚动一行 Ctrl + y 向上滚动一行 Ctrl + f 向下翻一页 Ctrl + b 向上翻一页 Ctrl + d 向下翻半页 文件操作 命令 说明 :e + filename 打开新文件 :r + filename 读取文件并插入到当前文件 选项设置 命令 说明 :set ic 忽略大小写 :set is 部分匹配 :set hls 高亮匹配 :set nu 显示行号 分屏启动vim 命令 说明 vim -on file1 file2 … 水平分屏 vim - On file1 file2 … 垂直分屏 关闭分屏 命令 说明 Ctrl + wc 关闭当前窗口 Ctrl + wq 关闭当前窗口 分屏 命令 说明 Ctrl + ws 上下分屏 Ctrl + wv 左右分屏 :sp filename 左右分屏，且打开一个新的文件 :vsp filename 上下分屏，且打开一个新的文件 切换分屏 命令 说明 Ctrl + wl 右边 Ctrl + wh 左边 Ctrl + wj 上边 Ctrl + wk 下边 分屏尺寸调整 (上下分屏生效) 命令 说明 Ctrl + w= 所有屏一样高度 Ctrl + w+ 增加高度 Ctrl + w- 减小高度]]></content>
     </entry>
 
     
@@ -45,16 +45,16 @@
 
     
     <entry>
-      <title><![CDATA[MongoDB基本使用学习]]></title>
-      <url>%2F2018%2F02%2F02%2FMongoDB%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%AD%A6%E4%B9%A0%2F</url>
-      <content type="text"><![CDATA[]]></content>
+      <title><![CDATA[python正则表达式学习]]></title>
+      <url>%2F2018%2F02%2F02%2Fpython%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%2F</url>
+      <content type="text"></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[python正则表达式学习]]></title>
-      <url>%2F2018%2F02%2F02%2Fpython%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%2F</url>
-      <content type="text"></content>
+      <title><![CDATA[MongoDB基本使用学习]]></title>
+      <url>%2F2018%2F02%2F02%2FMongoDB%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%AD%A6%E4%B9%A0%2F</url>
+      <content type="text"><![CDATA[]]></content>
     </entry>
 
     
