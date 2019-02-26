@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://yoursite.com/child/2019/02/26/python-wr/</loc>
+    <lastmod>2019-02-26T14:56:40.265Z</lastmod>
+    <data>
+        <display>
+        <title>python_wr</title>
+        <pubTime>2019-02-26T13:08:34.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/child/2019/01/13/vim-cheatsheet/</loc>
     <lastmod>2019-02-25T14:36:40.090Z</lastmod>
     <data>
@@ -297,9 +312,9 @@
         <title>降维之PCA主成分分析原理</title>
         <pubTime>2017-09-15T14:46:21.000Z</pubTime>
         
-        <tag>Vincent</tag>
-         
         <tag>PCA</tag>
+         
+        <tag>Vincent</tag>
          
          
            
@@ -427,13 +442,13 @@
         <title>Binary Tree & Recursion</title>
         <pubTime>2017-10-07T02:37:16.000Z</pubTime>
         
-        <tag>Data Structure</tag>
-         
-        <tag>Programming Practice</tag>
-         
         <tag>Recursion</tag>
          
         <tag>Binary Tree</tag>
+         
+        <tag>Data Structure</tag>
+         
+        <tag>Programming Practice</tag>
          
          
            
@@ -475,11 +490,11 @@
         <title>Dynamic Programming</title>
         <pubTime>2017-10-11T08:15:01.000Z</pubTime>
         
-        <tag>Dynamic Programming</tag>
-         
         <tag>Data Structure</tag>
          
         <tag>Programming Practice</tag>
+         
+        <tag>Dynamic Programming</tag>
          
          
            
