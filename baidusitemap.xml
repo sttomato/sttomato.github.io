@@ -3,10 +3,31 @@
 
 
     
+  <url>
+    <loc>http://yoursite.com/child/2020/05/16/Hexo%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2020-05-16T15:37:08.005Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo使用指南</title>
+        <pubTime>2020-05-16T15:12:08.493Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Tutorials</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tutorials" url="http://yoursite.com/child/categories/Tutorials/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://yoursite.com/child/2019/02/26/python-wr/</loc>
-    <lastmod>2019-03-10T03:24:43.662Z</lastmod>
+    <lastmod>2020-05-16T15:20:42.669Z</lastmod>
     <data>
         <display>
         <title>Python主要数据读写方式</title>
@@ -18,6 +39,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>http://yoursite.com/child/2019/01/13/vim-cheatsheet/</loc>
@@ -257,28 +279,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://yoursite.com/child/2017/09/14/Hexo%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
-    <lastmod>2017-10-29T18:01:56.032Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo使用指南</title>
-        <pubTime>2017-09-14T15:57:11.184Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>Tutorials</tag>
-         
-         
-           
-             
-              <breadCrumb title="Tutorials" url="http://yoursite.com/child/categories/Tutorials/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
     
     
