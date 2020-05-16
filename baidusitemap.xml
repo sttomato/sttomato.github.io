@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://yoursite.com/child/2020/05/16/FlowNet/</loc>
+    <lastmod>2020-05-16T15:52:09.125Z</lastmod>
+    <data>
+        <display>
+        <title>Optical Flow & Deep Learning</title>
+        <pubTime>2020-05-16T15:49:22.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/child/2020/05/16/Hexo%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
     <lastmod>2020-05-16T15:37:08.005Z</lastmod>
     <data>
@@ -43,7 +58,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2019/01/13/vim-cheatsheet/</loc>
-    <lastmod>2019-02-25T14:36:40.090Z</lastmod>
+    <lastmod>2019-02-25T14:36:42.000Z</lastmod>
     <data>
         <display>
         <title>vim常用命令</title>
@@ -61,7 +76,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2019/01/06/jupyter-tutorials/</loc>
-    <lastmod>2019-01-06T04:05:59.928Z</lastmod>
+    <lastmod>2019-01-06T04:06:00.000Z</lastmod>
     <data>
         <display>
         <title>jupyter_tutorials</title>
@@ -77,12 +92,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/child/2018/12/02/win10-anaconda-caffe/</loc>
-    <lastmod>2018-12-03T14:52:52.777Z</lastmod>
+    <loc>http://yoursite.com/child/2020/05/16/win10-anaconda-caffe/</loc>
+    <lastmod>2018-12-03T14:52:54.000Z</lastmod>
     <data>
         <display>
         <title>搭建沙雕工作站——Win10上面装Caffe</title>
-        <pubTime>2018-12-02T11:28:40.746Z</pubTime>
+        <pubTime>2020-05-16T15:12:08.555Z</pubTime>
         
         <tag>坑</tag>
          
@@ -99,7 +114,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2018/10/24/semantic/</loc>
-    <lastmod>2018-10-26T14:01:24.537Z</lastmod>
+    <lastmod>2018-10-26T14:01:26.000Z</lastmod>
     <data>
         <display>
         <title>语义分割入门——最近几年state of the art简介</title>
@@ -114,7 +129,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2017/12/09/%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9E%E6%97%B6%E8%A7%86%E9%A2%91%E8%B6%85%E5%88%86%E8%BE%A8%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2018-04-18T07:37:17.402Z</lastmod>
+    <lastmod>2018-04-18T07:37:18.000Z</lastmod>
     <data>
         <display>
         <title>基于深度学习的实时视频超分辨方法</title>
@@ -136,7 +151,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2018/02/02/your_wife/</loc>
-    <lastmod>2018-04-15T06:54:20.137Z</lastmod>
+    <lastmod>2018-04-15T06:54:22.000Z</lastmod>
     <data>
         <display>
         <title>诸君，我有你们老婆的本子！</title>
@@ -158,7 +173,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2018/02/02/python%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-02-28T05:59:34.980Z</lastmod>
+    <lastmod>2018-02-28T05:59:36.000Z</lastmod>
     <data>
         <display>
         <title>python正则表达式学习</title>
@@ -178,7 +193,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2018/02/04/%E6%B2%B3%E5%86%85%E8%87%AA%E5%8A%A9%E6%96%B9%E6%A1%88/</loc>
-    <lastmod>2018-02-28T05:58:48.976Z</lastmod>
+    <lastmod>2018-02-28T05:58:50.000Z</lastmod>
     <data>
         <display>
         <title>一个人的河内游规划</title>
@@ -198,7 +213,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2017/10/27/crawb/</loc>
-    <lastmod>2018-02-28T05:50:51.592Z</lastmod>
+    <lastmod>2018-02-28T05:50:52.000Z</lastmod>
     <data>
         <display>
         <title>爬虫——从入门到肾亏</title>
@@ -220,7 +235,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2018/02/02/MongoDB%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-02-28T05:48:16.499Z</lastmod>
+    <lastmod>2018-02-28T05:48:18.000Z</lastmod>
     <data>
         <display>
         <title>MongoDB基本使用学习</title>
@@ -240,7 +255,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2017/12/11/%E5%AD%A6%E6%A0%A1%E9%99%84%E8%BF%91%E7%9A%84%E5%B0%8F%E5%B1%B1%E4%BB%AC/</loc>
-    <lastmod>2017-12-12T07:47:34.206Z</lastmod>
+    <lastmod>2017-12-12T07:47:36.000Z</lastmod>
     <data>
         <display>
         <title>学校附近的小山们</title>
@@ -260,7 +275,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2017/10/06/Hexo%E4%BC%98%E5%8C%96%E5%AE%9E%E9%AA%8C/</loc>
-    <lastmod>2017-12-06T07:09:58.583Z</lastmod>
+    <lastmod>2017-12-06T07:10:00.000Z</lastmod>
     <data>
         <display>
         <title>Hexo优化实验</title>
@@ -284,7 +299,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2017/08/13/%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2017-10-22T15:07:31.105Z</lastmod>
+    <lastmod>2017-10-22T15:07:32.000Z</lastmod>
     <data>
         <display>
         <title>优化算法</title>
@@ -306,15 +321,15 @@
     
   <url>
     <loc>http://yoursite.com/child/2017/09/15/%E9%99%8D%E7%BB%B4%E4%B9%8BPCA%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%E5%8E%9F%E7%90%86/</loc>
-    <lastmod>2017-10-22T14:52:51.196Z</lastmod>
+    <lastmod>2017-10-22T14:52:52.000Z</lastmod>
     <data>
         <display>
         <title>降维之PCA主成分分析原理</title>
         <pubTime>2017-09-15T14:46:21.000Z</pubTime>
         
-        <tag>PCA</tag>
-         
         <tag>Vincent</tag>
+         
+        <tag>PCA</tag>
          
          
            
@@ -328,7 +343,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2017/05/07/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BF%AE%E7%82%BC%E6%89%8B%E5%86%8C/</loc>
-    <lastmod>2017-10-22T14:52:09.965Z</lastmod>
+    <lastmod>2017-10-22T14:52:10.000Z</lastmod>
     <data>
         <display>
         <title>机器学习修炼手册</title>
@@ -350,7 +365,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2017/10/09/%E9%80%92%E5%BD%92%E4%B8%8E%E5%9B%9E%E6%BA%AF/</loc>
-    <lastmod>2017-10-22T14:50:59.517Z</lastmod>
+    <lastmod>2017-10-22T14:51:00.000Z</lastmod>
     <data>
         <display>
         <title>Recursion & Backtracking</title>
@@ -370,7 +385,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2017/10/07/%E7%AC%94%E8%AF%95%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BB%A5%E5%8F%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</loc>
-    <lastmod>2017-10-22T14:47:53.161Z</lastmod>
+    <lastmod>2017-10-22T14:47:54.000Z</lastmod>
     <data>
         <display>
         <title>笔试常用命令以及注意事项</title>
@@ -394,7 +409,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2017/09/30/Sort-Algorithm/</loc>
-    <lastmod>2017-10-22T14:46:55.028Z</lastmod>
+    <lastmod>2017-10-22T14:46:56.000Z</lastmod>
     <data>
         <display>
         <title>Sort Algorithm</title>
@@ -414,7 +429,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2017/09/21/LeetCode-Backtracking/</loc>
-    <lastmod>2017-10-22T14:31:44.712Z</lastmod>
+    <lastmod>2017-10-22T14:31:46.000Z</lastmod>
     <data>
         <display>
         <title>LeetCode Backtracking</title>
@@ -436,7 +451,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2017/10/07/Binary-Tree-Recursion/</loc>
-    <lastmod>2017-10-22T14:30:44.084Z</lastmod>
+    <lastmod>2017-10-22T14:30:46.000Z</lastmod>
     <data>
         <display>
         <title>Binary Tree & Recursion</title>
@@ -462,7 +477,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2017/09/16/2017%E7%A7%8B%E6%8B%9B%E7%AC%AC%E4%B8%80%E5%9C%BA%EF%BC%9A%E4%BA%AC%E4%B8%9C/</loc>
-    <lastmod>2017-10-22T14:29:07.264Z</lastmod>
+    <lastmod>2017-10-22T14:29:08.000Z</lastmod>
     <data>
         <display>
         <title>2017秋招——京东</title>
@@ -484,7 +499,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2017/10/11/Dynamic-Programming/</loc>
-    <lastmod>2017-10-22T14:19:45.480Z</lastmod>
+    <lastmod>2017-10-22T14:19:46.000Z</lastmod>
     <data>
         <display>
         <title>Dynamic Programming</title>
@@ -508,7 +523,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2017/10/06/ListNode/</loc>
-    <lastmod>2017-10-06T15:08:09.900Z</lastmod>
+    <lastmod>2017-10-06T15:08:10.000Z</lastmod>
     <data>
         <display>
         <title>ListNode</title>
@@ -523,7 +538,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2017/09/29/Data-Structure/</loc>
-    <lastmod>2017-10-06T14:22:24.507Z</lastmod>
+    <lastmod>2017-10-06T14:22:26.000Z</lastmod>
     <data>
         <display>
         <title>Data Structure</title>
@@ -538,7 +553,7 @@
     
   <url>
     <loc>http://yoursite.com/child/2017/09/13/%E5%BF%AB%E6%8E%92%E7%A8%8B%E5%BA%8F/</loc>
-    <lastmod>2017-09-22T15:54:05.863Z</lastmod>
+    <lastmod>2017-09-22T15:54:06.000Z</lastmod>
     <data>
         <display>
         <title>快速排序</title>
