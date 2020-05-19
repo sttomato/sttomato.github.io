@@ -5,14 +5,21 @@
     
   <url>
     <loc>http://yoursite.com/child/2020/05/16/FlowNet/</loc>
-    <lastmod>2020-05-19T15:15:54.448Z</lastmod>
+    <lastmod>2020-05-19T15:23:15.215Z</lastmod>
     <data>
         <display>
         <title>Optical Flow & Deep Learning</title>
         <pubTime>2020-05-16T15:49:22.000Z</pubTime>
         
+        <tag>机器学习</tag>
+         
+        <tag>Deep Learning</tag>
+         
          
            
+             
+              <breadCrumb title="Deep Learning" url="http://yoursite.com/child/categories/Deep-Learning/"/>
+          
         </display>
     </data>
     </url>
