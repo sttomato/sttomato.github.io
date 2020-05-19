@@ -114,7 +114,7 @@
 <meta property="og:url" content="http://yoursite.com/child/2020/05/16/FlowNet/index.html">
 <meta property="og:site_name" content="Tomato | 日狗少年的吃瓜日常">
 <meta property="og:description" content="2020年重新开坑营业，这几周抽空把FlowNet系列的综述翻一下">
-<meta property="og:updated_time" content="2020-05-16T15:52:09.125Z">
+<meta property="og:updated_time" content="2020-05-19T15:15:54.448Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Optical Flow & Deep Learning">
 <meta name="twitter:description" content="2020年重新开坑营业，这几周抽空把FlowNet系列的综述翻一下">
@@ -376,8 +376,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-05-16T23:52:09+08:00">
-                2020-05-16
+              <time title="更新于" itemprop="dateModified" datetime="2020-05-19T23:15:54+08:00">
+                2020-05-19
               </time>
             
           </span>
@@ -425,7 +425,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  23
+                  903
                 </span>
               
 
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -464,6 +464,29 @@
       
         <p>2020年重新开坑营业，这几周抽空把FlowNet系列的综述翻一下</p>
  <a id="more"></a>
+<h1 id="Optical-Flow-Estimation-in-the-Deep-Learning-Age"><a href="#Optical-Flow-Estimation-in-the-Deep-Learning-Age" class="headerlink" title="Optical Flow Estimation in the Deep Learning Age"></a>Optical Flow Estimation in the Deep Learning Age</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>传统的光流估计是<strong>基于能量</strong>(energy-based)模型，即将光流估计过程公式化为能量最小化问题。<br>当前CNN成为光流估计中的SOTA，本文从以下几点论述：</p>
+<ol>
+<li>从早期的CNN光流估计过渡到现状</li>
+<li>讨论和比较技术细节，并总结出哪项具体方法可以获得显著性能提升</li>
+<li>给出在深度学习时代被提出的多种光流方法的综述（包括，有/无监督，多帧方案）</li>
+</ol>
+<h2 id="基于DL光流估计"><a href="#基于DL光流估计" class="headerlink" title="基于DL光流估计"></a>基于DL光流估计</h2><p>手动设计传统的能量模型 —&gt; 端到端模型</p>
+<ol>
+<li>概述早期用深度学习的方法</li>
+<li>总结多个典型的主流端到端光流估计CNN模型</li>
+</ol>
+<h3 id="能量模型-—-gt-CNN"><a href="#能量模型-—-gt-CNN" class="headerlink" title="能量模型 —&gt; CNN"></a>能量模型 —&gt; CNN</h3><p>Horn和Schunck用变分法(variational approach)来研究光流估计影响了学术界30多年。<br>能量最小化模型</p>
+<ul>
+<li>数据(data)项, 促进时间上对应的像素保持亮度恒定</li>
+<li>空域(spatial smoothness)平滑项，正则化相邻像素有着相似运动来处理光圈的问题</li>
+</ul>
+<p>空域连续光流场表示为${\rm u}=(u_x,u_y)$</p>
+<script type="math/tex; mode=display">
+E({\rm u}) = \int((I_x u_x + I_y u_y + I_t)^2 + \alpha ^2(\left\|\nabla u_x\right\|^2 + \left\|\nabla u_y\right\|^2))dxdy</script><p>$I_x,I_y,I_t$是图像光强$I$在$x,y,t$上的偏微分。<br>实际操作中，会做空域离散化，Horn-Schunck模型改写马尔可夫随机场(MRFs)</p>
+<script type="math/tex; mode=display">
+E({\rm u}) = \sum_{p\in \mathcal{I}}D(u_p) + \sum_{p,q \in \mathcal{N}} S({\rm u_p, u_q})</script><p>$D(\cdot)$:一维数据项;$S(\cdot, \cdot)$:平滑项；$\mathcal{I}$：图像像素集合；$\mathcal{N}$:空间相邻像素</p>
+<p>基于此方法，设计更好的能量模型来获得更高的光流精度，在后来渐渐出现了局限。在此之间，出现了Middlebury[4], MPI Sintel[8]和KITTI Optical Flow[14,37]的标杆数据集，这些数据集具有位移大，光照强度变化剧烈，并且还有遮挡。为光流估计提供了公平的比较方式，也促进了更加可信的能量模型。</p>
+<p>同时，CNN开始应用到大规模分类任务，并逐步推广到包括光流估计在内的视觉任务。早期的光流法将CNN作为高级特征提取器[2，3，12，16],如图1b。该法的核心思想在于用CNN特征匹配项来替换能量模型中的数据项，而不是用图片强度，图片梯度等手工特征。其他的平滑项和优化策略和之前保持一致。<br>CNN另一种使用方式，直接用一对输入图片来端到端估计光流的回归结构，如图1c。<br>FlowNet[10]是第一个端到端采用回归方式的CNN光流估计方案，使用encode-decode的方法。由于稠密光流的GT很难获取，作者使用了椅子的CAD模型来做仿真。此时的端到端方案并没有超过最好的能量模型。<br>通过设计新的结构，比如堆叠多个网络来优化之前的估计[25]或者构造金字塔结构以由粗到细的方式估计光流[23,41,48]。回归法CNN的好处在于可以在GPU可以实时运行并且精度还比能量模型好。用CNN端到端回归来估计光流已经变成该领域的主导范式，但仍旧还受限于一些问题没有被解决，比如大规模标注数据，以及在没有见过的数据集上精度下降等。为了解决此类问题，正在寻找无监督或者半监督的训练范式。</p>
 
       
     </div>
@@ -560,8 +583,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -670,6 +702,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Optical-Flow-Estimation-in-the-Deep-Learning-Age"><span class="nav-number">1.</span> <span class="nav-text">Optical Flow Estimation in the Deep Learning Age</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于DL光流估计"><span class="nav-number">1.2.</span> <span class="nav-text">基于DL光流估计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#能量模型-—-gt-CNN"><span class="nav-number">1.2.1.</span> <span class="nav-text">能量模型 —> CNN</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -713,7 +761,7 @@
   <span class="post-count">0</span>
   <span class="post-count">1</span>
   -->
-   <span class="post-count"> Total count: 32.0k Words</span> 
+   <span class="post-count"> Total count: 32.9k Words</span> 
 </div>
         
 
