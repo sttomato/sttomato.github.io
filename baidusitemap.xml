@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://yoursite.com/child/2020/05/16/Hexo%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2020-05-19T15:34:47.573Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo使用指南</title>
+        <pubTime>2020-05-16T15:12:08.493Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Tutorials</tag>
+         
+         
+           
+             
+              <breadCrumb title="Tutorials" url="http://yoursite.com/child/categories/Tutorials/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/child/2020/05/16/FlowNet/</loc>
     <lastmod>2020-05-19T15:23:15.215Z</lastmod>
     <data>
@@ -25,28 +47,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://yoursite.com/child/2020/05/16/Hexo%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
-    <lastmod>2020-05-16T15:37:08.005Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo使用指南</title>
-        <pubTime>2020-05-16T15:12:08.493Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>Tutorials</tag>
-         
-         
-           
-             
-              <breadCrumb title="Tutorials" url="http://yoursite.com/child/categories/Tutorials/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://yoursite.com/child/2019/02/26/python-wr/</loc>

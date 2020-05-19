@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/child/2020/05/16/Hexo%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
+    
+    <lastmod>2020-05-19T15:34:47.573Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/child/2020/05/16/FlowNet/</loc>
     
     <lastmod>2020-05-19T15:23:15.215Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://yoursite.com/child/about/index.html</loc>
     
     <lastmod>2020-05-16T17:03:01.555Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/child/2020/05/16/Hexo%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
-    
-    <lastmod>2020-05-16T15:37:08.005Z</lastmod>
     
   </url>
   
