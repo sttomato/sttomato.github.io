@@ -114,7 +114,7 @@
 <meta property="og:url" content="http://yoursite.com/child/2020/05/16/FlowNet/index.html">
 <meta property="og:site_name" content="Tomato | 日狗少年的吃瓜日常">
 <meta property="og:description" content="2020年重新开坑营业，这几周抽空把FlowNet系列的综述翻一下">
-<meta property="og:updated_time" content="2020-08-01T15:08:03.023Z">
+<meta property="og:updated_time" content="2020-08-01T15:11:53.055Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Optical Flow & Deep Learning">
 <meta name="twitter:description" content="2020年重新开坑营业，这几周抽空把FlowNet系列的综述翻一下">
@@ -376,7 +376,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-01T23:08:03+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-01T23:11:53+08:00">
                 2020-08-01
               </time>
             
@@ -518,13 +518,10 @@ E({\rm u}) = \sum_{p\in \mathcal{I}}D(u_p) + \sum_{p,q \in \mathcal{N}} S({\rm u
 <p>然后，采用Generalized PatchMatch[5]作为近似最近邻(ANN, Approximate Nearest Neighbor)算法来实现搜索匹配两张图片中提取的特征。</p>
 <p>训练集构建，搜集正相关patch光流和非匹配的patch光流</p>
 <p>损失函数，DrLIM loss[17],最小化正项patch的$L_2$平方误差，和最小化负向patch的$L_2$平方误差</p>
-<p>Bailer[3]等人的改进，阈值合页嵌入损失(thresholded hinge embedding loss)，</p>
-<ol>
-<li><script type="math/tex; mode=display">
+<p>Bailer[3]等人的改进，阈值合页嵌入损失(thresholded hinge embedding loss)，<br>3.</p>
+<script type="math/tex; mode=display">
 l_{hinge}(P_1, P_2) = L_2(P_1, P_2), \ \ \ \ \ (P_1,P_2) \in M^+</script><script type="math/tex; mode=display">
-l_{hinge}(P_1, P_2) = max(0, m - L_2(P_1, P_2)), \ \ \ \ \ (P_1,P_2) \in M^-</script></li>
-</ol>
-<p>4.</p>
+l_{hinge}(P_1, P_2) = max(0, m - L_2(P_1, P_2)), \ \ \ \ \ (P_1,P_2) \in M^-</script><p>4.</p>
 <script type="math/tex; mode=display">
 L_2(P_1,P_2) = \left\|F(P_1) - F(P_2)\right\|</script><p>其中，$F(P_1)$和$F(P_2)$是第一个图像$P_1$的patch和第二个图像$P_2$的patch的特征描述子，$L_2(P_1,P_2)$计算两个描述子的$L_2$损失；$M^+$和$M^-$是正向数据集和负向数据集。</p>
 <p>然而，最小化一些有挑战的正向例子的$L_2$损失（比如，亮度变化、外观差异），会将决策边界移动到不希望的方向，并且导致在靠近决策边界时错分类。因此，Bailer[3]在合页嵌入损失中引入了阈值t，防止网络在最小化$L_2$距离中太过激进，相比于公式3或者DrLIM损失，这使得光流估计更加精确。<br>5.</p>
